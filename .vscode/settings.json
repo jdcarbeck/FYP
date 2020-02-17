@@ -1,3 +1,9 @@
 {
-    "python.pythonPath": ".env/bin/python3.7"
+    "python.pythonPath": ".env/bin/python3.7",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    }
 }
