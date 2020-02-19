@@ -1,0 +1,9 @@
+{'2': 0.3783031586749104, '8': 0.4304786878385906, '14': 0.46413960670268944, '20': 0.4921714285903639, '26': 0.503640179485656, '32': 0.5099297228691707, '38': 0.5257860802241975}
+{'30': 0.5033429946155478, '40': 0.5283469550259154, '50': 0.5545951585943105, '60': 0.5693030881134896, '70': 0.6061265092532238}
+{'20': 0.4144707521459604}
+
+Two problems need to be addressed:
+• the sementation of individual words, possibly effecting counts
+• Consideration of different paragraphs as documents
+
+Possibly inverse document frequency used for small domain applications
