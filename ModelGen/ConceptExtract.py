@@ -2,11 +2,11 @@ import nltk
 from nltk.tokenize import word_tokenize
 from nltk.tree import Tree
 from nltk.chunk import regexp
+import string
 
 class Concepts:
-    concepts = []
-
     def __init__(self, text):
+        self.concepts = []
         pre_processed = self.process_text(text)
         self.concept_chunk(pre_processed)
 
@@ -32,10 +32,17 @@ class Concepts:
         # Find noun pairs in tree
         for subtree in tree.subtrees(filter= lambda t: t.label()=='NP'):
             found_np = ' '.join([text for text, label in subtree.leaves()])
+            found_np = self.process_term(found_np)
             self.concepts.append(found_np)
 
         # Find named enities
         tree = nltk.ne_chunk(pos_text,binary=True)
         for subtree in tree.subtrees(filter= lambda t: t.label()=='NE'):
             found_ne = ' '.join([text for text, label in subtree.leaves()])
+            found_ne = self.process_term(found_ne)
             self.concepts.append(found_ne)
+            
+    def process_term(self, term):
+        term = term.lower()
+        term = term.strip(string.punctuation)
+        return term

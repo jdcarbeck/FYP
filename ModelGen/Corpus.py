@@ -2,13 +2,23 @@ import codecs
 from bs4 import BeautifulSoup
 from .ConceptExtract import Concepts
 import re
+import pickle
 
 class Corpus:
-    docs = []
-    concepts = []
-
-    def __init__(self, filename):
-        self.docs = self.generate_docs(filename)
+    def __init__(self, filename, regen=False):
+        self.docs = []
+        self.concepts = []
+        if(regen):
+            self.generate_docs(filename)
+            with open('docs.pkl', 'wb') as f:
+                pickle.dump(self.docs, f, protocol=pickle.HIGHEST_PROTOCOL)
+            with open('concepts.pkl', 'wb') as f:
+                pickle.dump(self.concepts, f, protocol=pickle.HIGHEST_PROTOCOL)
+        else:
+            with open('docs.pkl', 'rb') as f:
+                self.docs = pickle.load(f)
+            with open('concepts.pkl', 'rb') as f:
+                self.concepts = pickle.load(f)
 
     def get_concepts(self):
         return self.concepts
@@ -39,6 +49,6 @@ class Document:
         self.title = title
         self.url = url
         self.uid = uid
-        self.text = text
+        self.text = text 
         self.paragraph = paragraph
         self.concepts = Concepts(text).get()

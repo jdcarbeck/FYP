@@ -2,6 +2,7 @@ import gensim
 import gensim.corpora as corpora
 from gensim.models.ldamodel import LdaModel
 from gensim.models import CoherenceModel
+from gensim.models import TfidfModel
 
 from pprint import pprint
 
@@ -12,22 +13,27 @@ class Model:
         self.texts = texts
         self.dct = corpora.Dictionary(texts)
         self.corpus = [self.dct.doc2bow(text) for text in texts]
-        print([[(self.dct[wid], freq) for wid, freq in cp] for cp in self.corpus[:1]])
+        # tfidf = TfidfModel(corpus)
+        # self.corpus = []
+        # for doc in corpus:
+        #     self.corpus.append(tfidf[doc])
+        # print(len(self.corpus))
+
 
     def gen_model(self, topics):
         print('Creating Model...')
-        mallet_path = './mallet-2.0.8/bin/mallet'
-        self.lda_model = gensim.models.wrappers.LdaMallet(mallet_path=mallet_path,corpus=self.corpus,num_topics=topics,id2word=self.dct)
-        # self.lda_model = LdaModel(corpus=self.corpus, 
-        #                           id2word=self.dct,
-        #                           num_topics=50,
-        #                           random_state=100,
-        #                           update_every=1,
-        #                           chunksize=100,
-        #                           passes=3,
-        #                           alpha='auto',
-        #                           per_word_topics=True
-        #                         )
+        # mallet_path = './mallet-2.0.8/bin/mallet'
+        # self.lda_model = gensim.models.wrappers.LdaMallet(mallet_path=mallet_path,corpus=self.corpus,num_topics=topics,id2word=self.dct)
+        self.lda_model = LdaModel(corpus=self.corpus, 
+                                  id2word=self.dct,
+                                  num_topics=topics,
+                                  random_state=100,
+                                  update_every=1,
+                                  chunksize=100,
+                                  passes=3,
+                                  alpha='auto',
+                                  per_word_topics=True
+                                )
         print('Finished!')
     
     def compute_coherence_values(self, limit, start=2, step=3):
@@ -46,9 +52,9 @@ class Model:
         model = self.lda_model
         pprint(model.print_topics())
 
-    # def show_model(self):
-        # vis = pyLDAvis.gensim.prepare(self.lda_model, self.corpus, self.dct)
-        # pyLDAvis.show(vis)
+    def show_model(self):
+        vis = pyLDAvis.gensim.prepare(self.lda_model, self.corpus, self.dct)
+        pyLDAvis.show(vis)
 
 def loadModel(path):
     pass
