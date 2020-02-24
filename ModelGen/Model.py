@@ -13,12 +13,18 @@ class Model:
         self.texts = texts
         self.dct = corpora.Dictionary(texts)
         self.corpus = [self.dct.doc2bow(text) for text in texts]
+        self.gen_model(15)
         # tfidf = TfidfModel(corpus)
         # self.corpus = []
         # for doc in corpus:
         #     self.corpus.append(tfidf[doc])
         # print(len(self.corpus))
 
+    def topic_dist(self, unseen_text):
+        unseen_corp = self.dct.doc2bow(unseen_text)
+        for index, score in sorted(self.lda_model[unseen_corp][0], key=lambda tup: -1*tup[1]):
+            print("TopicNum: {}\tScore: {}\t Topic: {}".format(index, score, self.lda_model.print_topic(index, 5)))
+        return self.lda_model[unseen_corp]
 
     def gen_model(self, topics):
         print('Creating Model...')
