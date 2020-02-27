@@ -10,6 +10,8 @@ class Corpus:
         self.docs = []
         self.concepts = []
         self.con2sen = {}
+        self.sen2con = {}
+
         if(regen):
             self.generate_docs(filename)
             self.gen_con2sen()
@@ -19,6 +21,8 @@ class Corpus:
                 pickle.dump(self.concepts, f, protocol=pickle.HIGHEST_PROTOCOL)
             with open('con2sen.pkl', 'wb') as f:
                 pickle.dump(self.con2sen, f, protocol=pickle.HIGHEST_PROTOCOL)
+            with open('sen2con.pkl', 'wb') as f:
+                pickle.dump(self.sen2con, f, protocol=pickle.HIGHEST_PROTOCOL)
         else:
             with open('docs.pkl', 'rb') as f:
                 self.docs = pickle.load(f)
@@ -26,6 +30,10 @@ class Corpus:
                 self.concepts = pickle.load(f)
             with open('con2sen.pkl', 'rb') as f:
                 self.con2sen = pickle.load(f)
+            with open('sen2con.pkl', 'rb') as f:
+                self.sen2con = pickle.load(f)
+        self.check_relation()
+
 
     def get_concepts(self):
         return self.concepts
@@ -47,6 +55,7 @@ class Corpus:
             text = list(filter(None, text))
             for index, t in enumerate(text):
                 d = Document(title, url, uid, index, t)
+                self.sen2con.update(d.sen2con)
                 self.docs.append(d)
                 self.concepts.append(d.concepts)
         print("Finished!")
@@ -65,6 +74,14 @@ class Corpus:
                         self.con2sen[con] = doc_con2sen[con]
                 else:
                     self.con2sen[con] = []
+    
+    def check_relation(self):
+        for vals in self.con2sen.values():
+            for sent in vals:
+                try:
+                    self.sen2con[sent]
+                except KeyError:
+                    print(sent)
                         
 
     def sents_with_con(self, concept):
@@ -73,6 +90,7 @@ class Corpus:
         else:
             return []
 
+
 class Document:
     def __init__(self, title, url, uid, paragraph, text):
         self.title = title
@@ -80,23 +98,29 @@ class Document:
         self.uid = uid
         self.text = text 
         self.paragraph = paragraph
-        self.con2sen, self.concepts = self.gen_con2sen()
+        self.con2sen, self.sen2con, self.concepts = self.gen_con2sen()
 
     """
     Takes a query term and searches if the term is in a sentence in the document
     """
     def gen_con2sen(self):
         con2sent = {}
+        sent2con = {}
         list_sent = sent_tokenize(self.text)
         for sent in list_sent:
             con_list = Concepts(sent).get()
+            sent2con[sent] = con_list
             for con in con_list:
                 if con in con2sent:
                     if sent not in con2sent[con]:
                         con2sent[con].append(sent)
                 else:
                     con2sent[con] = [sent]
-        return con2sent, list(con2sent.keys())
+        concepts = []
+        for key in sent2con.keys():
+            for con in sent2con[key]:
+                concepts.append(con)
+        return con2sent, sent2con, concepts
 
         
 

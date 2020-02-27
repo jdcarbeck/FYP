@@ -13,7 +13,8 @@ class Model:
         self.texts = texts
         self.dct = corpora.Dictionary(texts)
         self.corpus = [self.dct.doc2bow(text) for text in texts]
-        self.gen_model(15)
+        self.gen_model(10)
+        
         # tfidf = TfidfModel(corpus)
         # self.corpus = []
         # for doc in corpus:
@@ -22,12 +23,12 @@ class Model:
 
     def topic_dist(self, unseen_text):
         unseen_corp = self.dct.doc2bow(unseen_text)
-        for index, score in sorted(self.lda_model[unseen_corp][0], key=lambda tup: -1*tup[1]):
-            print("TopicNum: {}\tScore: {}\t Topic: {}".format(index, score, self.lda_model.print_topic(index, 5)))
+        # for index, score in sorted(self.lda_model[unseen_corp][0], key=lambda tup: -1*tup[1]):
+        #     print("TopicNum: {}\tScore: {}\t Topic: {}".format(index, score, self.lda_model.print_topic(index, 5)))
         return self.lda_model[unseen_corp]
 
     def gen_model(self, topics):
-        print('Creating Model...')
+        print('Creating Model with {} topics...'.format(topics))
         # mallet_path = './mallet-2.0.8/bin/mallet'
         # self.lda_model = gensim.models.wrappers.LdaMallet(mallet_path=mallet_path,corpus=self.corpus,num_topics=topics,id2word=self.dct)
         self.lda_model = LdaModel(corpus=self.corpus, 

@@ -1,6 +1,7 @@
 from .Corpus import Corpus
 from .Model import Model
 from .ConceptExtract import Concepts
+from gensim.matutils import cossim
 
 class Query:
     def __init__(self, corpus: Corpus, model: Model):
@@ -30,6 +31,22 @@ class Query:
         # 0th element has the topic break down of document
         # 1st elemtn has the word to topic relation
         # 2nd element has the word to topic breakdown
-        
+        return dist
         # print(dist[2])
+
+    def retrieve_docs(self, concepts: [str], similarity = 0.9):
+        topic_dist = self.model.topic_dist(concepts)
+        # topic_dist = self.get_concept_chain(concepts)
+        similar_docs = []
+        count = 0
+        for doc in self.corpus.docs:
+            for sent in doc.sen2con.keys():
+                sent_concepts = doc.sen2con[sent]
+                doc_dist = self.model.topic_dist(sent_concepts)
+                sim = cossim(doc_dist[0], topic_dist[0])
+                if sim > similarity:
+                    count+=1
+                    similar_docs.append(sent)
+        print("{}%% of documents found similar".format(count/len(self.corpus.docs)))
+        return similar_docs, topic_dist
 
