@@ -34,9 +34,9 @@ class Query:
         return dist
         # print(dist[2])
 
-    def retrieve_docs(self, concepts: [str], similarity = 0.9):
-        topic_dist = self.model.topic_dist(concepts)
-        # topic_dist = self.get_concept_chain(concepts)
+    def retrieve_docs(self, concepts: [str], similarity = 0.70):
+        # topic_dist = self.model.topic_dist(concepts)
+        topic_dist = self.get_concept_chain(concepts)
         similar_docs = []
         count = 0
         for doc in self.corpus.docs:
@@ -47,6 +47,6 @@ class Query:
                 if sim > similarity:
                     count+=1
                     similar_docs.append(sent)
-        print("{}%% of documents found similar".format(count/len(self.corpus.docs)))
+        print("{}%% of documents found similar".format(count/len(self.corpus.sen2con.keys())))
         return similar_docs, topic_dist
 

@@ -13,7 +13,7 @@ class Model:
         self.texts = texts
         self.dct = corpora.Dictionary(texts)
         self.corpus = [self.dct.doc2bow(text) for text in texts]
-        self.gen_model(10)
+        self.gen_model(22)
         
         # tfidf = TfidfModel(corpus)
         # self.corpus = []

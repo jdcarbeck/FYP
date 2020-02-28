@@ -4,6 +4,13 @@ from .ConceptExtract import Concepts
 import re
 import pickle
 from nltk.tokenize import sent_tokenize
+from gensim.summarization.textcleaner import split_sentences, clean_text_by_sentences
+from nltk.tokenize.punkt import PunktSentenceTokenizer, PunktParameters
+
+
+punkt_param = PunktParameters()
+abbreviation = ['f', 'fr', 'k']
+punkt_param.abbrev_types = set(abbreviation)
 
 class Corpus:
     def __init__(self, filename, regen=False):
@@ -32,7 +39,6 @@ class Corpus:
                 self.con2sen = pickle.load(f)
             with open('sen2con.pkl', 'rb') as f:
                 self.sen2con = pickle.load(f)
-        self.check_relation()
 
 
     def get_concepts(self):
@@ -74,16 +80,8 @@ class Corpus:
                         self.con2sen[con] = doc_con2sen[con]
                 else:
                     self.con2sen[con] = []
-    
-    def check_relation(self):
-        for vals in self.con2sen.values():
-            for sent in vals:
-                try:
-                    self.sen2con[sent]
-                except KeyError:
-                    print(sent)
-                        
 
+                        
     def sents_with_con(self, concept):
         if concept in self.con2sen:
             return self.con2sen[concept]
@@ -102,11 +100,12 @@ class Document:
 
     """
     Takes a query term and searches if the term is in a sentence in the document
+    Need to add documentation for punkt which is used for sentence segmentation, for better performance
     """
     def gen_con2sen(self):
         con2sent = {}
         sent2con = {}
-        list_sent = sent_tokenize(self.text)
+        list_sent = split_sentences(self.text)
         for sent in list_sent:
             con_list = Concepts(sent).get()
             sent2con[sent] = con_list

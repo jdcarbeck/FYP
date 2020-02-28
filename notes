@@ -23,3 +23,5 @@ Need to finish concept sentece ranking
 Also need to correct implementation of concept chain query
 
 With knowledge model terms generate the query terms and discount based of off material that is being read at the time
+
+Need to improve sentence segmentation, look into possibly paramertising the gensim one
