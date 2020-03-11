@@ -105,7 +105,7 @@ class Document:
     def gen_con2sen(self):
         con2sent = {}
         sent2con = {}
-        list_sent = split_sentences(self.text)
+        list_sent = sent_tokenize(self.text)
         for sent in list_sent:
             con_list = Concepts(sent).get()
             sent2con[sent] = con_list

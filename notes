@@ -1,27 +1,8 @@
-{'2': 0.3783031586749104, '8': 0.4304786878385906, '14': 0.46413960670268944, '20': 0.4921714285903639, '26': 0.503640179485656, '32': 0.5099297228691707, '38': 0.5257860802241975}
-{'30': 0.5033429946155478, '40': 0.5283469550259154, '50': 0.5545951585943105, '60': 0.5693030881134896, '70': 0.6061265092532238}
-{'20': 0.4144707521459604}
-
-Two problems need to be addressed:
-• the sementation of individual words, possibly effecting counts
-• Consideration of different paragraphs as documents
-
-Possibly inverse document frequency used for small domain applications
-
-
-Fixed the concepts
-{'2': 0.37717419492463455, '3': 0.4142108956370425, '4': 0.3976388595518172, '5': 0.42048786522947657, '6': 0.4316223449607864, '7': 0.40713399672333395, '8': 0.41265188126491736, '9': 0.427318773648786, '10': 0.40886794694835926, '11': 0.3919435662775159, '12': 0.4681525403665719, '13': 0.400858767080368, '14': 0.39928186244731007, '15': 0.4221488192405333, '16': 0.48471268682923385, '17': 0.44565893986917887, '18': 0.455566861353055, '19': 0.40508434655630454, '20': 0.4540597243045778, '21': 0.43845304093894977, '22': 0.496921807758131, '23': 0.40117945789496157, '24': 0.3656808753801142, '25': 0.4288708746554346, '26': 0.38151302859961633, '27': 0.4270336782629605, '28': 0.4556215165227275, '29': 0.4264874198181824}
-
-
-First approach with Cross Concept Chain Query
-Then look at probolistic TMR regularisation based on a query
-
-Each paragraph is treated as a seperate document. Need each document to also be a representation of sentences
-    Might need to join named entities and nps, so concepts and named phrases are conjoined
-
-Need to finish concept sentece ranking
+Need to finish concept sentece ranking 
+ • Implementation of reducency
 Also need to correct implementation of concept chain query
+ • query term expansion
 
-With knowledge model terms generate the query terms and discount based of off material that is being read at the time
+With knowledge model terms generate the query terms and discount based of off material that is being read at the time. Example in article with discounting for query retrival
 
-Need to improve sentence segmentation, look into possibly paramertising the gensim one
+Need to start looking at demo version of system with document relation, as well as evaluation

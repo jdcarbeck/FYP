@@ -9,11 +9,11 @@ from pprint import pprint
 import pyLDAvis.gensim
 
 class Model:
-    def __init__(self, texts):
+    def __init__(self, texts, topics=10):
         self.texts = texts
         self.dct = corpora.Dictionary(texts)
         self.corpus = [self.dct.doc2bow(text) for text in texts]
-        self.gen_model(22)
+        self.gen_model(topics)
         
         # tfidf = TfidfModel(corpus)
         # self.corpus = []
@@ -36,7 +36,6 @@ class Model:
                                   num_topics=topics,
                                   random_state=100,
                                   update_every=1,
-                                  chunksize=100,
                                   passes=3,
                                   alpha='auto',
                                   per_word_topics=True
