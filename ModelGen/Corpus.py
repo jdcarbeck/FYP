@@ -7,10 +7,9 @@ from nltk.tokenize import sent_tokenize
 from gensim.summarization.textcleaner import split_sentences, clean_text_by_sentences
 from nltk.tokenize.punkt import PunktSentenceTokenizer, PunktParameters
 
+import nltk.data
 
-punkt_param = PunktParameters()
-abbreviation = ['f', 'fr', 'k']
-punkt_param.abbrev_types = set(abbreviation)
+tokenizer = nltk.data.load('tokenizers/punkt/PY3/english.pickle')
 
 class Corpus:
     def __init__(self, filename, regen=False):
@@ -105,7 +104,7 @@ class Document:
     def gen_con2sen(self):
         con2sent = {}
         sent2con = {}
-        list_sent = sent_tokenize(self.text)
+        list_sent = tokenizer.tokenize(self.text)
         for sent in list_sent:
             con_list = Concepts(sent).get()
             sent2con[sent] = con_list

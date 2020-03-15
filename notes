@@ -1,7 +1,7 @@
-Need to finish concept sentece ranking 
- • Implementation of reducency
 Also need to correct implementation of concept chain query
  • query term expansion
+
+Need to fix sentence segmentation: splitta
 
 With knowledge model terms generate the query terms and discount based of off material that is being read at the time. Example in article with discounting for query retrival
 
