@@ -21,22 +21,22 @@ class Corpus:
         if(regen):
             self.generate_docs(filename)
             self.gen_con2sen()
-            with open('docs.pkl', 'wb') as f:
+            with open('./Models/docs.pkl', 'wb') as f:
                 pickle.dump(self.docs, f, protocol=pickle.HIGHEST_PROTOCOL)
-            with open('concepts.pkl', 'wb') as f:
+            with open('./Models/concepts.pkl', 'wb') as f:
                 pickle.dump(self.concepts, f, protocol=pickle.HIGHEST_PROTOCOL)
-            with open('con2sen.pkl', 'wb') as f:
+            with open('./Models/con2sen.pkl', 'wb') as f:
                 pickle.dump(self.con2sen, f, protocol=pickle.HIGHEST_PROTOCOL)
-            with open('sen2con.pkl', 'wb') as f:
+            with open('./Models/sen2con.pkl', 'wb') as f:
                 pickle.dump(self.sen2con, f, protocol=pickle.HIGHEST_PROTOCOL)
         else:
-            with open('docs.pkl', 'rb') as f:
+            with open('./Models/docs.pkl', 'rb') as f:
                 self.docs = pickle.load(f)
-            with open('concepts.pkl', 'rb') as f:
+            with open('./Models/concepts.pkl', 'rb') as f:
                 self.concepts = pickle.load(f)
-            with open('con2sen.pkl', 'rb') as f:
+            with open('./Models/con2sen.pkl', 'rb') as f:
                 self.con2sen = pickle.load(f)
-            with open('sen2con.pkl', 'rb') as f:
+            with open('./Models/sen2con.pkl', 'rb') as f:
                 self.sen2con = pickle.load(f)
 
 

@@ -1,0 +1,24 @@
+\chapter{Introduction}
+
+The internet has brought with it an explosion of online content. Huge sets of textual based content now live on the World Wide Web. This ever growing volume of content has led to the development of information retrieval (IR) systems. These systems help guide users to relevant content from their expressed need. IR systems have been implemented to serve specific domains performing retrieval on smaller sets of documents. These domain specific systems aim to improve the form of the retrieved information as well as relevance of documents to the specific information needs of the user. These systems often use domain specific models to expand queries or perform summarization tasks. These domain models take the form of ontologies or knowledge bases. 
+
+Wikipedia offers over 6 million articles in english, a user faces the problem of two much information due to the plethora of relevant and related documents for a given topic in a larger domain. World War II as an example contains 26,388 directly related pages. Even within a small domain such as the Watergate Scandal there are 32 relevant pages and while some pages provide a general overview of a topic, when reading or learning on a sub-topic of a particular topic many of the pages that are related lay latent. Many of these topics in Wikipedia lack formal domain specific models that are commonly used in specific domain IR.
+
+The creation of domain specific models for IR requires human intervention and experts in the given domain, and semantic based knowledge bases often fail to contain specific domain relations. Both general and domain specific information systems are permissive and rely on user requests of information. User permissive IR systems cause greater cognitive load then a system that anticipates information need and preforms preemptive retrieval.
+
+The creation of domain specific models for IR requires human intervention and experts in the given domain. Semantic based knowledge bases often are too generalised and fail to contain specific domain relations. Both general and domain specific information systems are permissive and rely on user requests of information. User permissive IR systems cause greater cognitive load then preemptive IR systems that anticipates user’s information needs. A preemptive IR system allows for greater guidance to undiscovered content.
+
+In this paper, a summarization system is proposed that uses Latent Dirichlet Allocation to generate unsupervised topic models for a domain specific set of documents, Wikipedia pages related to The Watergate Scandal. The generated topic models are used with a user knowledge model to generate queries relating to gaps in knowledge as represented in the model. Documents are retrieved based on the generated query and a summarisation of these latent topics are presented to guide the user to unknown topics in a domain. This system offers:
+
+\begin{itemize}
+    \item No reliance on expert create ontologies or specific domain models
+    \item Organic Topic generation
+    \item Preemptive query generation based on user knowledge modeling
+    \item Multidocument Extractive summarisation
+    \item User interoperability of the systems summarisation generation    
+\end{itemize}
+
+The proposed summarisation system is constructed from existing IR methods and tested against these systems to assess the implementation of these techniques. The use of different user knowledge models results in tailored summarization based on the information needs of that specific user.
+
+\section{The Conclusions chapter}
+The final chapter should give a short summary of the key methods, results and findings in your project. You should also briefly identify what, if any, future work might be executed to resolve unanswered questions or to advance the study beyond the scope that you identified in Chapter 1.

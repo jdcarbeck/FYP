@@ -1,0 +1,66 @@
+\begin{thebibliography}{9}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Fitzpatrick(2003)]{fitzpatrick2003flow}
+JA~Fitzpatrick.
+\newblock Flow/acoustic interactions of two cylinders in cross-flow.
+\newblock \emph{Journal of Fluids and Structures}, 17\penalty0 (1):\penalty0
+  97--113, 2003.
+
+\bibitem[Finnegan et~al.(2010)Finnegan, Meskell, and
+  Ziada]{finnegan2010experimental}
+SL~Finnegan, C~Meskell, and S~Ziada.
+\newblock Experimental investigation of the acoustic power around two tandem
+  cylinders.
+\newblock \emph{Journal of Pressure Vessel Technology}, 132\penalty0
+  (4):\penalty0 041306, 2010.
+
+\bibitem[Hall et~al.(2003)Hall, Ziada, and Weaver]{hall2003vortex}
+JW~Hall, S~Ziada, and DS~Weaver.
+\newblock Vortex-shedding from single and tandem cylinders in the presence of
+  applied sound.
+\newblock \emph{Journal of Fluids and Structures}, 18\penalty0 (6):\penalty0
+  741--758, 2003.
+
+\bibitem[Jordan et~al.(2001)Jordan, Fitzpatrick, and Meskell]{jordan2001array}
+Peter Jordan, John Fitzpatrick, and Craig Meskell.
+\newblock Array beam pattern control for measurement of propeller noise.
+\newblock In \emph{AIAA/CEAS Aeroacoustics Conference and Exhibit, Maastricht,
+  Netherlands}, 2001.
+
+\bibitem[Pa{\"\i}doussis et~al.(2010)Pa{\"\i}doussis, Price, and
+  De~Langre]{paidoussis2010fluid}
+Michael~P Pa{\"\i}doussis, Stuart~J Price, and Emmanuel De~Langre.
+\newblock \emph{Fluid-structure interactions: cross-flow-induced
+  instabilities}.
+\newblock Cambridge University Press, 2010.
+
+\bibitem[Reyes(2007)]{reyes2007power}
+L~Reyes.
+\newblock Power uprate program status report-secy-07-0090.
+\newblock Technical report, Technical Report, US Nuclear Regulatory Commission,
+  2007.
+
+\bibitem[{International Energy Agency}()]{iea2011}
+{International Energy Agency}.
+\newblock {Technology Roadmap --- Geothermal Heat and Power}.
+\newblock
+  \url{https://www.iea.org/publications/freepublications/publication/Geothermal_Roadmap.pdf}.
+
+\bibitem[Shustek and Interviewee-Knuth(2008)]{shustek2008interview}
+Len Shustek and Donald Interviewee-Knuth.
+\newblock Interview donald knuth: A life's work interrupted.
+\newblock \emph{Communications of the ACM}, 51\penalty0 (8):\penalty0 31--35,
+  2008.
+
+\bibitem[Oetiker et~al.(2001)Oetiker, Partl, Hyna, and Schlegl]{oetiker2001not}
+Tobias Oetiker, Hubert Partl, Irene Hyna, and Elisabeth Schlegl.
+\newblock The not so short introduction to latex 2$\varepsilon$.
+\newblock 2001.
+\newblock \url{https://doi.org/10.3929/ethz-a-004398225}.
+
+\end{thebibliography}

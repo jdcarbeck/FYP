@@ -7,7 +7,7 @@ from operator import itemgetter
 
 import pprint
 
-corpus = Corpus('./WikiCorpus/WaterGateText/AA/wiki_00', regen=False)
+corpus = Corpus('./WikiCorpus/WaterGateText/AA/wiki_00', regen=True)
 concepts = corpus.get_concepts()
 # print("\nExample of concepts found: {}\n".format(concepts[:3]))
 
