@@ -9,3 +9,7 @@ Issues with segmentation
 With knowledge model terms generate the query terms and discount based of off material that is being read at the time. Example in article with discounting for query retrival
 
 Need to start looking at demo version of system with document relation, as well as evaluation
+
+
+
+Change corpus to work on a list of documents, or get topic term frequencys directly from the documents

@@ -16,6 +16,8 @@ class Query:
             • produce keywords specified that relate to given concepts
     """
     def get_concept_chain(self, concepts: [str], keywords=10):
+        print("Original Query: ", concepts)
+
         # find sents relating to given concepts
         unseen_sent = []
         for con in concepts:
@@ -25,12 +27,55 @@ class Query:
                     unseen_sent.append(sent)
         unseen_doc = " ".join(unseen_sent)
         # concept extract the unseen_doc
-        unseen_concepts = Concepts(unseen_doc).get()
-
-        dist = self.model.topic_dist(unseen_concepts)
+        unseen_concepts = [] 
+        for sent in unseen_sent:
+            unseen_concepts.append(Concepts(sent).get())
+        # print(unseen_doc)
+        # print(unseen_concepts)
+        unseen_model = Model(unseen_concepts, topics=10)
         # 0th element has the topic break down of document
         # 1st elemtn has the word to topic relation
         # 2nd element has the word to topic breakdown
+        # unseen_model.print_model()
+        join_concepts = " ".join(concepts)
+        dist = unseen_model.topic_dist(Concepts(join_concepts).get())
+        # for topic in unseen_model.lda_model.num_topics:
+        #     top_topics = unseen_model.lda_model.get_topic_terms(topic)
+        #     print(top_topics)
+        # tuple(id,termid,value)
+
+        top_words = {}
+        topic_prob = dist[0]
+        word_probs = []
+
+        for topic_id, topic_value in topic_prob:
+            # word (id, prob)
+            top_n_words = unseen_model.lda_model.get_topic_terms(topic_id, topn=4)
+            for word_id, word_prob in top_n_words:
+                word_prob = topic_value * word_prob
+                if word_id in top_words:
+                    if word_prob > top_words[word_id]:
+                        top_words[word_id] = word_prob
+                else:
+                    top_words[word_id] = word_prob
+        top_n_words = list(top_words.items())
+        top_n_words.sort(key=lambda tup: tup[1])
+
+        cross_chain_query = []
+        for word_id, value in top_n_words:
+            word = unseen_model.dct.id2token[word_id]
+            if word not in concepts and len(cross_chain_query) < keywords:
+                cross_chain_query.append(word)   
+                   # Now sort the the top_words
+
+        print("Extended Query: ", (concepts + cross_chain_query))
+
+
+
+        query = " ".join(list(concepts + cross_chain_query))
+        query_concepts = Concepts(query).get()
+        dist = self.model.topic_dist(query_concepts)
+
         return dist
         # print(dist[2])
 
