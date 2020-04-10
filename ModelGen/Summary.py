@@ -56,18 +56,16 @@ class Summary:
         return out
     
     def cos_sim_model(self, sentences, term_sent_weights, con_freq, return_dict):
-        model = {}
         for i in range(0, len(sentences)-2):
             print("done cos: ", i/(len(sentences)-2))
             for j in range(i+1, len(sentences)-1):
-                model[sentences[i] + sentences[j]] = self.sen_cos_sim(sentences, i, j, term_sent_weights, con_freq)
-        return_dict = model
+                return_dict[sentences[i] + sentences[j]] = self.sen_cos_sim(sentences, i, j, term_sent_weights, con_freq)
     
     def ngd_sim_model(self, sentences_pairs, n, sent_con_freq, return_dict):
         i = 1
         for sentence1, sentence2 in sentences_pairs:
             print("done ngd: ", i/len(sentences_pairs))
-            return_dict[sentence1 + sentence1] = self.sen_ngd_sim(sentence1, sentence2, n, sent_con_freq)
+            return_dict[sentence1 + sentence2] = self.sen_ngd_sim(sentence1, sentence2, n, sent_con_freq)
             i += 1
 
     def find_cos_sim(self, i,j, sentences):
