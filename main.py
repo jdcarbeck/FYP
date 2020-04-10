@@ -4,27 +4,28 @@ from ModelGen.Query import Query
 from ModelGen.SentenceRanker import SentenceRanker, ScoredSentence
 from ModelGen.Summary import Summary
 from operator import itemgetter
+from ModelGen.ConceptExtract import Concepts
 import numpy
 
-import pprint
+import pprint as pp
 
 corpus = Corpus('./WikiCorpus/WaterGateText/AA/wiki_00', regen=False)
 concepts = corpus.get_concepts()
 # print("\nExample of concepts found: {}\n".format(concepts[:3]))
 
-model = Model(corpus.get_concepts(),topics=25)
+model = Model(corpus.get_concepts(),topics=10)
 query = Query(corpus, model)
 
-# model.show_model()
+text = "In the context of the Watergate scandal, Operation Gemstone was a proposed series of clandestine or illegal acts, first outlined by G. Gordon Liddy in two separate meetings with three other individuals: then-Attorney General of the United States, John N. Mitchell, then-White House Counsel John Dean, and Jeb Magruder, an ally and former aide to H.R. Haldeman, as well as the temporary head of the Committee to Re-elect the President, pending Mitchell's resignation as Attorney General."
+pp.pprint(text)
 
-concepts = ["burglars",
-            "watergate",
-            "enemies list",
-            ]
+concepts = Concepts(text).get()
+print(concepts)
 
+# concepts = ["operation gemstone"]
 
 print("Cohernece value {}\n".format(model.coherence_val()))
-found_docs, query_topic_dist = query.retrieve_docs(concepts)
+found_docs, query_topic_dist = query.retrieve_docs(concepts, similarity=0.90)
 
 
 # print("Found {} sentences for query concepts: {}, {}\nShowing first 4:".format(len(found_docs), concept3, concept2))

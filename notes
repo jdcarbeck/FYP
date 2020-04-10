@@ -13,3 +13,11 @@ Need to start looking at demo version of system with document relation, as well 
 
 
 Change corpus to work on a list of documents, or get topic term frequencys directly from the documents
+
+
+Time complexity as an issues for sentences selection:
+    Can be dealt with by choosing higher simlarity threshold such as .90 instead of .72
+    Need to generate sentence pairings first then break them up into to proceesses to create the model
+
+In terms of evaluation evaulate it based of query based reterival methods
+Can only hint at personalsisation and say that the system is apt for being implemented with topic based user modeling
