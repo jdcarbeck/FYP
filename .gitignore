@@ -1,7 +1,10 @@
 .env
+.vscode
+dataset
 .DS_Store
 *.pyc
 __pycache__
 mallet-2.0.8
 stanford-corenlp-full-2018-10-05
 WashingtonPost.v2
+LDAvis_files

@@ -1,0 +1,40 @@
+{
+    "article": [
+        "as our cities get busier parking spaces become harder to come by and it can be difficult to squeeze into a tight spot in rush hour .", 
+        "but german engineers have come up with an innovative solution - a small electric car that can turn on the spot , shrink in size and even move sideways , like a crab , so it can park itself .", 
+        "the eossc2 is described as an ` ultra flexible micro-car for mega cities ' and is designed to connect to others to form a train .", 
+        "scroll down for videos .", 
+        "engineers at the dfki robotics centre describe the eossc2 -lrb- animated -rrb- as an ` ultra flexible micro-car for mega cities ' and plan on enabling it to drive itself . the concept car can turn on the spot , shrink in size and even move sideways , like a crab , so it can park itself .", 
+        "crabs have a wide flat body to make it easier squeeze into narrow spaces and the eossc2 works in a similar way .", 
+        "the arthropods flex the second joint of each leg to move sideways , although some crabs can walk forwards as well .", 
+        "in the case of the eossc2 , the car turns its wheels to manoeuvre and mimic this movement .", 
+        "its unusual design also features a forward tilt and doors that open like the delorean in back to the future .", 
+        "its unusual design also features a forward tilt and doors that open like the delorean in back to the future -lrb- pictured -rrb- . currently , the two-seater vehicle can be driven in the traditional way , diagonally and sideways . it pivots using wheels powered by separate motors and shrinks from 8ft -lrb- 2.5 metres -rrb- to 5ft ft -lrb- 1.5 metres -rrb- .", 
+        "crabs -lrb- stock image -rrb- have a wide flat body to make it easier squeeze into narrow spaces and the eossc2 works in a similar way . the arthropods flex the second joint of each leg to move sideways , although some crabs can walk forwards as well . in the case of the car , the wheels pivot sideways .", 
+        "created at the dfki robotics centre in bremen , germany , the concept vehicle is intended to be semi-autonomous .", 
+        "the car 's computer and its auto-navigation system enables it to park itself , ` even within narrow and congested roads , ' the firm said .", 
+        "size : 8 feet -lrb- 2.5 metres -rrb- to 5 feet -lrb- 1.5 metres -rrb- .", 
+        "weight : 1,653 lbs -lrb- 750 kg -rrb- .", 
+        "power : 54v - lifepo4 battery .", 
+        "speed : 40mph -lrb- 65 km/h -rrb- .", 
+        "motors : four 4kw wheelhub motors .", 
+        "sensors : 360 lidar sensor on the roof .", 
+        "testing : bremen , germany and dalian , china .", 
+        "` later , an autopilot will be able to drive the car without a single passenger intervention creating the driverless car , ' it added .", 
+        "currently , the two-seater vehicle can be driven in the traditional way , diagonally and sideways .", 
+        "it can also pivot on the spot and shrink from 8 feet -lrb- 2.5 metres -rrb- to 5 feet -lrb- 1.5 metres -rrb- while maintaining a comfortable seating position , according to the firm .", 
+        "it does this because its wheels are individually powered by separate motors so they can turn in different directions .", 
+        "the car has a top speed of 40mph -lrb- 65 km/h -rrb- and its semi-autonomous features are possible because of inbuilt cameras and a lidar sensor on its roof , which lets the vehicle scan its environment and locate itself in it , 10 times a second .", 
+        "it is designed to link with others to from a kind a connected convoy that can save energy over long distances - such as on motorways or as a car-sharing scheme .", 
+        "a team of 10 engineers built the car from scratch over a three year period .", 
+        "the eossc2 is currently being tested in the cities of bremen and dalian , china .", 
+        "the car has a top speed of 40mph -lrb- 65 km/h -rrb- and its semi-autonomous features are possible because of inbuilt cameras and a lidar sensor on its roof , which lets the vehicle scan its environment and locate itself in it , 10 times a second . the eossc2 is currently being tested in the cities of bremen and dalian , china ."
+    ], 
+    "abstract": [
+        "german eossc2 concept car is electric and semi-autonomous .", 
+        "it can turn on the spot and be driven diagonally and sideways .", 
+        "concept car can park itself in tight spaces using cameras and a sensor .", 
+        "engineers hope to make 40mph -lrb- 60km/h -rrb- vehicle completely autonomous ."
+    ], 
+    "id": "f40d3e3d68af0c13b0f907c47f4fac4254e86126"
+}
