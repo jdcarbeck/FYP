@@ -34,9 +34,11 @@ for i, user in enumerate(users_knowledge):
     found_docs, query_topic_dist = query.retrieve_docs(query_concepts, similarity=0.90)
     summary = Summary(found_docs, corpus)
     summary_list = summary.doc_summary()
+    links = []
     for sent in summary_list:
-        
+        links.append(corpus.get_links(sent))
     print("\033[32mSUMMARY:\033[0m",summary_list)
+    print(links)
 
 # print(model.compute_coherence_values(30,step=1))
 # model.show_model()
