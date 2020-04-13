@@ -8,6 +8,33 @@ class Query:
         self.corpus = corpus
         self.model = model
 
+
+    """
+        Based on a given document returns the most salient concepts in that document
+    """
+    def top_concepts(self, doc, keywords=3):
+        concepts = Concepts(doc).get()
+        print("\033[33mConcepts Extracted:\033[0m", concepts, "\n")
+        doc_dist = self.model.topic_dist(concepts)
+        
+        concept_sim = []
+        # get cosine similarity of concept and document distribution
+        for concept in concepts:
+            concept_dist = self.model.topic_dist([concept])
+            sim = cossim(doc_dist[0], concept_dist[0])
+
+            if not (any(concept == item[0] for item in concept_sim)):
+                concept_sim.append((concept, sim))
+        
+        concept_sim.sort(key=lambda tup: tup[1])
+
+        keyword_list = [concept[0] for concept in concept_sim]
+
+        return keyword_list[:keywords]
+
+
+
+
     """
         Get the documents associated with a list of concepts
         gen a set of keywords to be associated with the concept chain
@@ -16,8 +43,6 @@ class Query:
             • produce keywords specified that relate to given concepts
     """
     def get_concept_chain(self, concepts: [str], keywords=10):
-        print("Original Query: ", concepts)
-
         # find sents relating to given concepts
         unseen_sent = []
         for con in concepts:
@@ -68,7 +93,7 @@ class Query:
                 cross_chain_query.append(word)   
                    # Now sort the the top_words
 
-        print("Extended Query: ", (concepts + cross_chain_query))
+        print("\033[34mExtended Query:\033[0m", (concepts + cross_chain_query), "\n")
 
 
 
@@ -92,6 +117,6 @@ class Query:
                 if sim > similarity:
                     count+=1
                     similar_docs.append(sent)
-        print("{}%% of documents found similar".format(count/len(self.corpus.sen2con.keys())))
+        print("{}%% of documents found similar\n".format(count/len(self.corpus.sen2con.keys())))
         return similar_docs, topic_dist
 

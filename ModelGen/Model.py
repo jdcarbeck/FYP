@@ -29,7 +29,7 @@ class Model:
         return self.lda_model[unseen_corp]
 
     def gen_model(self, topics):
-        print('Creating Model with {} topics...'.format(topics))
+        print('Creating Model with {} topics...\n'.format(topics))
         # mallet_path = './mallet-2.0.8/bin/mallet'
         # self.lda_model = gensim.models.wrappers.LdaMallet(mallet_path=mallet_path,corpus=self.corpus,num_topics=topics,id2word=self.dct)
         self.lda_model = LdaModel(corpus=self.corpus, 
@@ -41,7 +41,6 @@ class Model:
                                   alpha='auto',
                                   per_word_topics=True
                                 )
-        print('Finished!')
     
     def compute_coherence_values(self, limit, start=2, step=3):
         coherence_values = {}
