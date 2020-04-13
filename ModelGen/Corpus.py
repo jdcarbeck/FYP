@@ -95,11 +95,10 @@ class Corpus:
             return []
 
     def get_links(self, sent):
-        document_links = []
         for d in self.docs:
             if sent in d.sen2con.keys():
-                document_links.append((d.title, d.url))
-        return document_links
+                return d.title, d.url
+        
 
 
 

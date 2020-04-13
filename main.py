@@ -36,9 +36,13 @@ for i, user in enumerate(users_knowledge):
     summary_list = summary.doc_summary()
     links = []
     for sent in summary_list:
-        links.append(corpus.get_links(sent))
+        title, link = corpus.get_links(sent)
+        if (title, link) not in links:
+            links.append((title, link))
+
     print("\033[32mSUMMARY:\033[0m",summary_list)
-    print(links)
+    for title, url in links:
+        print(title, ": ", url)
 
 # print(model.compute_coherence_values(30,step=1))
 # model.show_model()
