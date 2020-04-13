@@ -20,7 +20,7 @@ query = Query(corpus, model)
 text = "In the context of the Watergate scandal, Operation Gemstone was a proposed series of clandestine or illegal acts, first outlined by G. Gordon Liddy in two separate meetings with three other individuals: then-Attorney General of the United States, John N. Mitchell, then-White House Counsel John Dean, and Jeb Magruder, an ally and former aide to H.R. Haldeman, as well as the temporary head of the Committee to Re-elect the President, pending Mitchell's resignation as Attorney General.\n"
 print("\033[33mDocument being read: \033[0m", text, "\n")
 
-top_concepts = query.top_concepts(text)
+top_concepts = query.top_concepts(text, keywords=5)
 
 
 users_knowledge = [["operation sandwedge", "political enemies", "caulfield"],["senate watergate committee","impeachment","testimony"],["october", "saturday night massacre","tapes"]]
@@ -31,7 +31,7 @@ for i, user in enumerate(users_knowledge):
     print("\033[33mTop concepts from document:\033[0m", top_concepts)
     print("\033[33mUser knowledge sugesstion:\033[0m", user, "\n")
     query_concepts = top_concepts + user
-    found_docs, query_topic_dist = query.retrieve_docs(query_concepts, similarity=0.90)
+    found_docs, query_topic_dist = query.retrieve_docs(query_concepts, similarity=0.80, query_len=20)
     summary = Summary(found_docs, corpus)
     summary_list = summary.doc_summary()
     links = []
@@ -41,8 +41,10 @@ for i, user in enumerate(users_knowledge):
             links.append((title, link))
 
     print("\033[32mSUMMARY:\033[0m",summary_list)
+    print("\033[32mLINKS:\033[0m")
     for title, url in links:
-        print(title, ": ", url)
+        print("\033[1m", title, ": \033[0m", url)
+    print()
 
 # print(model.compute_coherence_values(30,step=1))
 # model.show_model()

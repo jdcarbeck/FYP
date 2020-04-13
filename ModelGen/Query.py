@@ -104,9 +104,9 @@ class Query:
         return dist
         # print(dist[2])
 
-    def retrieve_docs(self, concepts: [str], similarity = 0.80):
+    def retrieve_docs(self, concepts: [str], similarity = 0.80, query_len=10):
         # topic_dist = self.model.topic_dist(concepts)
-        topic_dist = self.get_concept_chain(concepts)
+        topic_dist = self.get_concept_chain(concepts, keywords=query_len)
         similar_docs = []
         count = 0
         for doc in self.corpus.docs:
