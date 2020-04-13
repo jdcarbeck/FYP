@@ -10,10 +10,20 @@ from multiprocessing import Process
 from multiprocessing import Manager
 
 class Summary:
-    def __init__(self, doc, corpus: Corpus, min_len=20):
+    def __init__(self, doc, corpus: Corpus, min_len=10, num_process=8):
         self.corpus = corpus
+        
         sentences = [sent for sent in doc if len(sent) > min_len]
-        self.doc = list(dict.fromkeys(sentences))
+        sentences = list(dict.fromkeys(sentences))
+
+        pruned_sentences = []
+        for sent in sentences:
+            concepts = self.corpus.sen2con[sent]
+            if concepts != []:
+                pruned_sentences.append(sent)
+        sentences = pruned_sentences
+
+        self.doc = sentences
         self.__sent_term_weighting()
 
         sentences_pairs = []
@@ -22,7 +32,7 @@ class Summary:
                 sentences_pairs.append((sentences[i], sentences[j]))
 
         # split sentence pairs and then start a process that will
-        sentences_chunks = self.chunkIt(sentences_pairs, 8)
+        sentences_chunks = self.chunkIt(sentences_pairs, num_process)
 
         manager = Manager()
         cos_dict = manager.dict()
@@ -30,9 +40,8 @@ class Summary:
         p_cos = Process(target=self.cos_sim_model, args=(sentences, self.term_sent_weights, self.con_freq, cos_dict,))
 
         processes = []
-        print("Num of chunks: ", len(sentences_chunks))
         for chunk in sentences_chunks:
-            p = Process(target=self.ngd_sim_model, args=(chunk, len(sentences_pairs), self.sent_con_freq, ngd_dict,))
+            p = Process(target=self.ngd_sim_model, args=(chunk, len(sentences_pairs), self.sent_con_freq, self.corpus.sen2con, ngd_dict,))
             processes.append(p)
             p.start()
 
@@ -44,7 +53,6 @@ class Summary:
 
         self.cos_sim_dict = cos_dict
         self.ngd_sim_dict = ngd_dict
-        print("done")
         
     def chunkIt(self, seq, num):
         avg = len(seq) / float(num)
@@ -57,15 +65,15 @@ class Summary:
     
     def cos_sim_model(self, sentences, term_sent_weights, con_freq, return_dict):
         for i in range(0, len(sentences)-2):
-            print("done cos: ", i/(len(sentences)-2))
+            # print("done cos: ", i/(len(sentences)-2))
             for j in range(i+1, len(sentences)-1):
                 return_dict[sentences[i] + sentences[j]] = self.sen_cos_sim(sentences, i, j, term_sent_weights, con_freq)
     
-    def ngd_sim_model(self, sentences_pairs, n, sent_con_freq, return_dict):
+    def ngd_sim_model(self, sentences_pairs, n, sent_con_freq, con2sen, return_dict):
         i = 1
         for sentence1, sentence2 in sentences_pairs:
-            print("done ngd: ", i/len(sentences_pairs))
-            return_dict[sentence1 + sentence2] = self.sen_ngd_sim(sentence1, sentence2, n, sent_con_freq)
+            # print("done ngd: ", i/len(sentences_pairs))
+            return_dict[sentence1 + sentence2] = self.sen_ngd_sim(sentence1, sentence2, n, sent_con_freq, con2sen)
             i += 1
 
     def find_cos_sim(self, i,j, sentences):
@@ -114,13 +122,15 @@ class Summary:
 
     def doc_summary(self, sen_len=300, alpha=0.8):
         sentences = self.doc
-
+        n_i = len(sentences) - 2
+        n_j = len(sentences) - 1
+        maxium_len = sen_len
         lp_problem = p.LpProblem('problem', p.LpMaximize)
-        x_ij = p.LpVariable.dicts('xij', [(sentences[i],sentences[j]) for i in range(0, len(sentences)-2) for j in range(i+1, len(sentences)-1)], cat='Binary')
-        constriant_len = p.lpSum([(len(sentences[i]) + len(sentences[j]))*(x_ij[(sentences[i],sentences[j])]) for i in range(0, len(sentences)-2) for j in range(i+1, len(sentences)-1)]) <= sen_len
-        # for i in sentences:
-        #     for j in sentences:
-        #         lp_problem += len(i) + len(j) <= sen_len
+        x_ij = p.LpVariable.dicts('xij', [(sentences[i],sentences[j]) for i in range(0, n_i) for j in range(i+1, n_j)], cat='Binary')
+        constriant_len = p.LpConstraint(e=p.lpSum([(len(sentences[i]) + len(sentences[j]))*(x_ij[(sentences[i],sentences[j])]) for i in range(0, n_i) for j in range(i+1, n_j)]),sense=p.LpConstraintLE,rhs=300)
+        # for i in range(0, n_i):
+        #     for j in range(i+1 ,n_j):
+        #         lp_problem += (((len(sentences[i]) + len(sentences[j])) * x_ij[(sentences[i],sentences[j])]) <= sen_len)
         
         # objective = p.LpAffineExpression( \
         #     (alpha * ((self.cos_sim(document, i) + self.cos_sim(document, j) - self.cos_sim(i, j))*(x_i[i] * x_j[j])) for i in sentences for j in sentences) \
@@ -133,8 +143,11 @@ class Summary:
             + \
             ((1-alpha) * (self.find_ngd_sim(i, j, sentences) * x_ij[(sentences[i],sentences[j])]))
                 for i in range(0, len(sentences)-2) for j in range(i+1, len(sentences)-1)])
-        lp_problem += constriant_len
         lp_problem += objective
+        lp_problem += constriant_len
+        # for i in range(0, n_i):
+        #     for j in range(i+1 ,n_j):
+        #         lp_problem += (((len(sentences[i]) + len(sentences[j])) * x_ij[(sentences[i],sentences[j])]) <= sen_len)
 
         # lp_problem.writeLP("CheckLpProgram.lp")
         maxium_summary_sent = []
@@ -165,7 +178,7 @@ class Summary:
                     summary_sent[sentences[j]] = ""
                 index+=1
 
-        return "\n".join(list(summary_sent.keys()))
+        return list(summary_sent.keys())
 
 
         # for v in lp_problem.variables():
@@ -178,8 +191,8 @@ class Summary:
         cos_sim = (self.cos_sim(sentences[i], term_sent_weights, con_freq ) + self.cos_sim(sentences[j], term_sent_weights, con_freq) - self.cos_sim(sentences[i], term_sent_weights, con_freq, item2=sentences[j]))
         return cos_sim
 
-    def sen_ngd_sim(self, sentence1, sentence2, n, sent_con_freq):
-        ngd_sim = (self.ngd_sim(sentence1, n, sent_con_freq) + self.ngd_sim(sentence2, n, sent_con_freq) - self.ngd_sim(sentence1, n, sent_con_freq, item2=sentence2))
+    def sen_ngd_sim(self, sentence1, sentence2, n, sent_con_freq, sen2con):
+        ngd_sim = (self.ngd_sim(sentence1, n, sent_con_freq, sen2con) + self.ngd_sim(sentence2, n, sent_con_freq, sen2con) - self.ngd_sim(sentence1, n, sent_con_freq, sen2con, item2=sentence2))
         return ngd_sim
 
 
@@ -195,25 +208,37 @@ class Summary:
         similarity = numerator/denominator
         return similarity
 
-    def ngd_sim(self, item1, n, sent_con_freq, item2=None,):
+    def ngd_sim(self, item1, n, sent_con_freq, con2sen, item2=None,):
         # self.corpus.sen2con[sent]
         # slef.corpus.con2sen[con] to get number of sentences that contain that concept
         # intersect the two terms lists to get the number of co-occurances and combine the score
         item2_con = []
-        item1_con = self.corpus.sen2con[item1]
+        item1_con = con2sen[item1]
         if item2 is None:
-            item2_con = list(self.sent_con_freq.keys())
+            item2_con = list(sent_con_freq.keys())
         else:
-            item2_con = self.corpus.sen2con[item2]
+            item2_con = con2sen[item2]
 
         ngd_sum = 0
+        ngds_counted = 0
         for term1 in item1_con:
             for term2 in item2_con:
+                ngds_counted += 1
                 ngd = self.ngd_term(term1, term2, n, sent_con_freq)
                 ngd_sim = math.exp(-ngd)
                 ngd_sum += ngd_sim
         
-        ngd = (ngd_sum/(len(item1_con) * len(item2_con)))
+        try:
+            ngd = (ngd_sum/(len(item1_con) * len(item2_con)))
+            ngd = 1 - ngd
+        except ZeroDivisionError:
+            print("len(item1_con): ", len(item1_con))  
+            print("item1", item1)
+            print("item1 in doc", item1 in self.doc)
+            print("len(item2_con): ", len(item2_con))
+            print("item2", item2)
+            print("item2 in doc", item2 in self.doc)
+            ngd = 1
         return ngd
 
         # sentences contain termk and setneces that contain both termk and terml

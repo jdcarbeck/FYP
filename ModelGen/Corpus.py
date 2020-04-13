@@ -12,33 +12,40 @@ import nltk.data
 tokenizer = nltk.data.load('tokenizers/punkt/PY3/english.pickle')
 
 class Corpus:
-    def __init__(self, filename, regen=False):
+    def __init__(self, documents, filename=None, regen=False):
         self.docs = []
         self.concepts = []
         self.con2sen = {}
         self.sen2con = {}
 
-        if(regen):
-            self.generate_docs(filename)
+        if filename is None:
+            for doc in documents:
+                d = Document(doc)
+                self.sen2con.update(d.sen2con)
+                self.docs.append(d)
+                self.concepts.append(d.concepts)
             self.gen_con2sen()
-            with open('./Models/docs.pkl', 'wb') as f:
-                pickle.dump(self.docs, f, protocol=pickle.HIGHEST_PROTOCOL)
-            with open('./Models/concepts.pkl', 'wb') as f:
-                pickle.dump(self.concepts, f, protocol=pickle.HIGHEST_PROTOCOL)
-            with open('./Models/con2sen.pkl', 'wb') as f:
-                pickle.dump(self.con2sen, f, protocol=pickle.HIGHEST_PROTOCOL)
-            with open('./Models/sen2con.pkl', 'wb') as f:
-                pickle.dump(self.sen2con, f, protocol=pickle.HIGHEST_PROTOCOL)
         else:
-            with open('./Models/docs.pkl', 'rb') as f:
-                self.docs = pickle.load(f)
-            with open('./Models/concepts.pkl', 'rb') as f:
-                self.concepts = pickle.load(f)
-            with open('./Models/con2sen.pkl', 'rb') as f:
-                self.con2sen = pickle.load(f)
-            with open('./Models/sen2con.pkl', 'rb') as f:
-                self.sen2con = pickle.load(f)
-
+            if(regen):
+                self.generate_docs(filename)
+                self.gen_con2sen()
+                with open('./Models/docs.pkl', 'wb') as f:
+                    pickle.dump(self.docs, f, protocol=pickle.HIGHEST_PROTOCOL)
+                with open('./Models/concepts.pkl', 'wb') as f:
+                    pickle.dump(self.concepts, f, protocol=pickle.HIGHEST_PROTOCOL)
+                with open('./Models/con2sen.pkl', 'wb') as f:
+                    pickle.dump(self.con2sen, f, protocol=pickle.HIGHEST_PROTOCOL)
+                with open('./Models/sen2con.pkl', 'wb') as f:
+                    pickle.dump(self.sen2con, f, protocol=pickle.HIGHEST_PROTOCOL)
+            else:
+                with open('./Models/docs.pkl', 'rb') as f:
+                    self.docs = pickle.load(f)
+                with open('./Models/concepts.pkl', 'rb') as f:
+                    self.concepts = pickle.load(f)
+                with open('./Models/con2sen.pkl', 'rb') as f:
+                    self.con2sen = pickle.load(f)
+                with open('./Models/sen2con.pkl', 'rb') as f:
+                    self.sen2con = pickle.load(f)
 
     def get_concepts(self):
         return self.concepts
@@ -59,7 +66,7 @@ class Corpus:
             # text is now split by paragraph
             text = list(filter(None, text))
             for index, t in enumerate(text):
-                d = Document(title, url, uid, index, t)
+                d = Document(t, title=title, url=url, uid=uid, paragraph=index)
                 self.sen2con.update(d.sen2con)
                 self.docs.append(d)
                 self.concepts.append(d.concepts)
@@ -89,7 +96,7 @@ class Corpus:
 
 
 class Document:
-    def __init__(self, title, url, uid, paragraph, text):
+    def __init__(self, text, title=None, url=None, uid=None, paragraph=None):
         self.title = title
         self.url = url
         self.uid = uid
@@ -107,13 +114,14 @@ class Document:
         list_sent = tokenizer.tokenize(self.text)
         for sent in list_sent:
             con_list = Concepts(sent).get()
-            sent2con[sent] = con_list
-            for con in con_list:
-                if con in con2sent:
-                    if sent not in con2sent[con]:
-                        con2sent[con].append(sent)
-                else:
-                    con2sent[con] = [sent]
+            if con_list is not []:
+                sent2con[sent] = con_list
+                for con in con_list:
+                    if con in con2sent:
+                        if sent not in con2sent[con]:
+                            con2sent[con].append(sent)
+                    else:
+                        con2sent[con] = [sent]
         concepts = []
         for key in sent2con.keys():
             for con in sent2con[key]:

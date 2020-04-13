@@ -9,7 +9,7 @@ import numpy
 
 import pprint as pp
 
-corpus = Corpus('./WikiCorpus/WaterGateText/AA/wiki_00', regen=False)
+corpus = Corpus([], filename='./WikiCorpus/WaterGateText/AA/wiki_00', regen=False)
 concepts = corpus.get_concepts()
 # print("\nExample of concepts found: {}\n".format(concepts[:3]))
 
