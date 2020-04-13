@@ -94,6 +94,14 @@ class Corpus:
         else:
             return []
 
+    def get_links(self, sent):
+        document_links = []
+        for d in self.docs:
+            if sent in d.sen2con.keys():
+                document_links.append((d.title, d.url))
+        return document_links
+
+
 
 class Document:
     def __init__(self, text, title=None, url=None, uid=None, paragraph=None):
