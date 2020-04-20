@@ -40,7 +40,8 @@ class Concepts:
         for subtree in tree.subtrees(filter= lambda t: t.label()=='NE'):
             found_ne = ' '.join([text for text, label in subtree.leaves()])
             found_ne = self.process_term(found_ne)
-            self.concepts.append(found_ne)
+            if found_ne not in self.concepts:
+                self.concepts.append(found_ne)
             
     def process_term(self, term):
         term = term.lower()

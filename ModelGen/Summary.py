@@ -21,9 +21,8 @@ class Summary:
             concepts = self.corpus.sen2con[sent]
             if concepts != []:
                 pruned_sentences.append(sent)
-        sentences = pruned_sentences
 
-        self.doc = sentences
+        self.sentences = pruned_sentences
         self.__sent_term_weighting()
 
         sentences_pairs = []
@@ -85,7 +84,7 @@ class Summary:
     def __sent_term_weighting(self):
         sent_con_freq = {}
         freq_concepts = {}
-        for sent in self.doc:
+        for sent in self.sentences:
             freq_concepts[sent] = {}
             concepts_in_sent = self.corpus.sen2con[sent]
             for concept in concepts_in_sent:
@@ -100,7 +99,7 @@ class Summary:
                     sent_con_freq[concept] = [sent]
         
         term_sent_weights = {}
-        for sent in self.doc:
+        for sent in self.sentences:
             term_sent_weights[sent] = {}
             for con in sent_con_freq:
                 term_freq = 0
@@ -121,7 +120,7 @@ class Summary:
 
 
     def doc_summary(self, sen_len=300, alpha=0.8):
-        sentences = self.doc
+        sentences = self.sentences
         n_i = len(sentences) - 2
         n_j = len(sentences) - 1
         maxium_len = sen_len
@@ -230,15 +229,14 @@ class Summary:
         
         try:
             ngd = (ngd_sum/(len(item1_con) * len(item2_con)))
-            ngd = 1 - ngd
         except ZeroDivisionError:
             print("len(item1_con): ", len(item1_con))  
             print("item1", item1)
-            print("item1 in doc", item1 in self.doc)
+            print("item1 in doc", item1 in self.sentences)
             print("len(item2_con): ", len(item2_con))
             print("item2", item2)
-            print("item2 in doc", item2 in self.doc)
-            ngd = 1
+            print("item2 in doc", item2 in self.sentences)
+            ngd = 0.0000000000001
         return ngd
 
         # sentences contain termk and setneces that contain both termk and terml

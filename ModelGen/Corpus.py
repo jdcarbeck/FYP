@@ -109,13 +109,13 @@ class Document:
         self.uid = uid
         self.text = text 
         self.paragraph = paragraph
-        self.con2sen, self.sen2con, self.concepts = self.gen_con2sen()
+        self.con2sen, self.sen2con, self.concepts = self.document_concepts()
 
     """
     Takes a query term and searches if the term is in a sentence in the document
     Need to add documentation for punkt which is used for sentence segmentation, for better performance
     """
-    def gen_con2sen(self):
+    def document_concepts(self):
         con2sent = {}
         sent2con = {}
         list_sent = tokenizer.tokenize(self.text)

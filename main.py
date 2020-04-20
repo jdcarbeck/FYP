@@ -11,7 +11,7 @@ import pprint as pp
 
 corpus = Corpus([], filename='./WikiCorpus/WaterGateText/AA/wiki_00', regen=False)
 concepts = corpus.get_concepts()
-# print("\nExample of concepts found: {}\n".format(concepts[:3]))
+
 
 model = Model(corpus.get_concepts(),topics=10)
 print("Cohernece value {}\n".format(model.coherence_val()))
@@ -31,7 +31,7 @@ for i, user in enumerate(users_knowledge):
     print("\033[33mTop concepts from document:\033[0m", top_concepts)
     print("\033[33mUser knowledge sugesstion:\033[0m", user, "\n")
     query_concepts = top_concepts + user
-    found_docs, query_topic_dist = query.retrieve_docs(query_concepts, similarity=0.80, query_len=20)
+    found_docs = query.retrieve_docs(query_concepts, similarity=0.80, query_len=20)
     summary = Summary(found_docs, corpus)
     summary_list = summary.doc_summary()
     links = []

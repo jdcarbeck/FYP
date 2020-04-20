@@ -12,14 +12,14 @@ class Model:
     def __init__(self, texts, topics=10):
         self.texts = texts
         self.dct = corpora.Dictionary(texts)
-        self.corpus = [self.dct.doc2bow(text) for text in texts]
+        self.boc = [self.dct.doc2bow(text) for text in texts]
         self.gen_model(topics)
         
         # tfidf = TfidfModel(corpus)
-        # self.corpus = []
+        # self.boc = []
         # for doc in corpus:
-        #     self.corpus.append(tfidf[doc])
-        # print(len(self.corpus))
+        #     self.boc.append(tfidf[doc])
+        # print(len(self.boc))
 
     def topic_dist(self, unseen_text, show=False):
         unseen_corp = self.dct.doc2bow(unseen_text)
@@ -31,15 +31,14 @@ class Model:
     def gen_model(self, topics):
         print('Creating Model with {} topics...\n'.format(topics))
         # mallet_path = './mallet-2.0.8/bin/mallet'
-        # self.lda_model = gensim.models.wrappers.LdaMallet(mallet_path=mallet_path,corpus=self.corpus,num_topics=topics,id2word=self.dct)
-        self.lda_model = LdaModel(corpus=self.corpus, 
+        # self.lda_model = gensim.models.wrappers.LdaMallet(mallet_path=mallet_path,corpus=self.boc,num_topics=topics,id2word=self.dct)
+        self.lda_model = LdaModel(corpus=self.boc, 
                                   id2word=self.dct,
                                   num_topics=topics,
                                   random_state=100,
                                   update_every=1,
                                   passes=3,
-                                  alpha='auto',
-                                  per_word_topics=True
+                                  alpha='auto'
                                 )
     
     def compute_coherence_values(self, limit, start=2, step=3):
@@ -59,7 +58,7 @@ class Model:
         pprint(model.print_topics())
 
     def show_model(self):
-        vis = pyLDAvis.gensim.prepare(self.lda_model, self.corpus, self.dct)
+        vis = pyLDAvis.gensim.prepare(self.lda_model, self.boc, self.dct)
         pyLDAvis.show(vis)
 
 def loadModel(path):
