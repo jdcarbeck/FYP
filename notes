@@ -929,3 +929,11 @@ Attardi, G (2016) WikiExtractor source code (Version 2.55) [Source code]. http:/
   year={2011},
   publisher={Citeseer}
 }
+
+@software{wikiextractor
+  author = {Attardi},
+  title = {WikiExtractor},
+  url = {http://medialab.di.unipi.it/wiki/Wikipedia_Extractor},
+  version = {2.55},
+  year = {2016}
+}

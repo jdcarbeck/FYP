@@ -128,16 +128,7 @@ class Summary:
         lp_problem = p.LpProblem('problem', p.LpMaximize)
         x_ij = p.LpVariable.dicts('xij', [(sentences[i],sentences[j]) for i in range(0, n_i) for j in range(i+1, n_j)], cat='Binary')
         constriant_len = p.LpConstraint(e=p.lpSum([(len(sentences[i]) + len(sentences[j]))*(x_ij[(sentences[i],sentences[j])]) for i in range(0, n_i) for j in range(i+1, n_j)]),sense=p.LpConstraintLE,rhs=300)
-        # for i in range(0, n_i):
-        #     for j in range(i+1 ,n_j):
-        #         lp_problem += (((len(sentences[i]) + len(sentences[j])) * x_ij[(sentences[i],sentences[j])]) <= sen_len)
-        
-        # objective = p.LpAffineExpression( \
-        #     (alpha * ((self.cos_sim(document, i) + self.cos_sim(document, j) - self.cos_sim(i, j))*(x_i[i] * x_j[j])) for i in sentences for j in sentences) \
-        #         + \
-        #     ((1 - alpha) * ((self.ngd_sim(document, i) + self.ngd_sim(document, j) - self.ngd_sim(i, j))*(x_i[i] * x_j[j])) for i in sentences for j in sentences)
-        # )
-        # objective = p.LpSum(([(self.cos_sim(i) + self.cos_sim(j) - self.cos_sim(i, item2=j))*(x_ij[(i,j)])) for i in sentences for j in sentences)
+
         objective = p.lpSum([ \
             (alpha * (self.find_cos_sim(i, j, sentences) * x_ij[(sentences[i],sentences[j])])) \
             + \
@@ -145,27 +136,15 @@ class Summary:
                 for i in range(0, len(sentences)-2) for j in range(i+1, len(sentences)-1)])
         lp_problem += objective
         lp_problem += constriant_len
-        # for i in range(0, n_i):
-        #     for j in range(i+1 ,n_j):
-        #         lp_problem += (((len(sentences[i]) + len(sentences[j])) * x_ij[(sentences[i],sentences[j])]) <= sen_len)
 
-        # lp_problem.writeLP("CheckLpProgram.lp")
         maxium_summary_sent = []
-
         lp_problem.solve()
-
 
         summary_sent = {}
         variables_dict = {}
         variables_list = lp_problem.variables()
         for v in variables_list:
             variables_dict[v.name] = v.varValue
-
-        # for key in variables_dict.keys():
-        #     if variables_dict[key] > 0:
-        #         print(key)
-
-
         variables_keys = list(variables_dict.keys())
 
         index = 0
@@ -179,13 +158,6 @@ class Summary:
                 index+=1
 
         return list(summary_sent.keys())
-
-
-        # for v in lp_problem.variables():
-        #     if v.varValue > 0:
-        #         maxium_summary_sent.append(v.name)
-
-        # return self.sentence_extract(maxium_summary_sent)
 
     def sen_cos_sim(self, sentences, i, j, term_sent_weights, con_freq):
         cos_sim = (self.cos_sim(sentences[i], term_sent_weights, con_freq ) + self.cos_sim(sentences[j], term_sent_weights, con_freq) - self.cos_sim(sentences[i], term_sent_weights, con_freq, item2=sentences[j]))

@@ -1,8 +1,19 @@
 \babel@toc {english}{}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Velocity distribution on the mid-plane for an inlet velocity for case 1.\relax }}{12}{figure.caption.5}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Velocity distribution on the mid-plane for an inlet velocity for case 1.\relax }}{27}{figure.caption.5}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Design process used for this project.\relax }}{31}{figure.caption.7}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Classifications identified for the needed system.\relax }}{33}{figure.caption.8}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Tasks considered for the proposed system.\relax }}{36}{figure.caption.9}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces POS dependency tree for "Vice President Gerald Ford succeeded to the presidency upon Nixon's resignation".\relax }}{42}{figure.caption.10}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Design developed from the classification, tasks, and methods identified for the needed system.\relax }}{49}{figure.caption.11}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Design of system implemenation processes.\relax }}{54}{figure.caption.12}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Process of Model and Corpus Generation.\relax }}{55}{figure.caption.13}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces nltk tree formed from grammar by RegexParser.\relax }}{58}{figure.caption.14}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces nltk tree formed from ne\_chunk().\relax }}{58}{figure.caption.15}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces pyLDAvis visualisation of topic model formed from Watergate Scandal Wikipedia articles.\relax }}{60}{figure.caption.16}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Process of expanding a query\relax }}{62}{figure.caption.17}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

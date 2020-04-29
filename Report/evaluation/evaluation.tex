@@ -1,1 +1,27 @@
-\chapter{Results}
+\chapter{Evaluation}
+\section{Introduction}
+Inorder to address the extent to which the proposed domain independent summarisation system can perform extractive personalised summarisation, two forms of evaluation were performed, referred to as Analysis 1 and 2. 
+
+Analysis 1 set out to determine the efficacy of the systems summarisation method, the system was tested on two summarisation data sets, a single document and multi-document dataset. From the summaries produced ROUGE metrics (Lin, Cao, Gao, and Nie, 2006) were calculated and compared to other extractive summarisation systems. The aim of the comparative evaluation was to determine both the quality of summaries produced against human generated summaries as well as the systems performance against state of the art extractive summarisation systems. 
+
+Analysis 2 examines the systems ability to provide personalised summarisation, through the use of queries. Two types of queries were examined, a context free query and contextual query. Context free queries examine the system's ability to retrieve relevant documents and produce a human interpretable summary within a specific domain. The second type of query was to assess the efficacy of the system to be used in a recommender system from examining system summaries produced from a context and context free query in specific domains. The results of comparative evaluation show that the system does achieve state of the art summarisation performance, but is a competitive method for summarisation. The results of query based summarisation evaluation, demonstrate the system's effectiveness to be providing personalised summaries in a specific domain, and the possible use of the summarisation system in a recommender system.
+
+\section{Analysis 1: Comparative Summarisation Evaluation}
+The comparative evaluation of this system with state of the art are extractive summarisation systems assess the implementation of existing methods in the system to perform generic summarisation. The metrics to use in the comparative evaluation are the ROUGE (Recall-Oriented Understudy for Gisting Evaluation) metrics \citep{lin2004rouge}. ROUGE metrics are used for evaluating how well automatic summarisation methods can produce summaries similar to a human generated reference summary. The ROUGE metrics used are:
+
+\begin{itemize}
+    \item ROUGE-1: The overlap of uni-grams (single terms) between a system summary and a reference summary.
+    \item ROUGE-2: The overlap of bi-grams (adjacent terms) between a system summary and a reference summary. This is provide by the following formula:
+\end{itemize}
+
+Each ROUGE metric uses two methods of scoring, precision and recall. Recall accounts for how well the system summary is able to cover the content of the reference summary. The precision of a summary asses how much of the system summary is relevant to the reverence summary. These two calculations can be generalised as the following equations:
+
+\begin{equation*}
+    ROUGE_{recall} = \frac{\#\:of\: Overlaps\: of \:System\: Content \:and \:Reference\: Content}{\#\: of\: Content\: in\: Reference\: Summary}
+    \label{rouge_r2}
+\end{equation*}
+
+\begin{equation*}
+    ROUGE_{precision} = \frac{\# \:of\: Overlaps\: of\: System\: Content\: and\: Reference\: Content}{\#\: of\: Content\: in\: System\: Summary}
+    \label{rouge_p3}
+\end{equation*}

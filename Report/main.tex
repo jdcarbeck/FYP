@@ -52,6 +52,9 @@
 \usepackage{amsmath}
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
 \usepackage[pdftex]{graphicx}
+\usepackage{listings}
+\usepackage{courier}
+\lstset{basicstyle=\footnotesize\ttfamily,breaklines=true}
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage[colorlinks=true, allcolors=black]{hyperref}
 \usepackage{caption} % if no caption, no colon
@@ -85,7 +88,7 @@
 % \renewcommand{\familydefault}{\sfdefault} %use the sans-serif font as default
 
 %% If you're not using sans-serif, consider using Palatino instead of the LaTeX standard
-\usepackage{mathpazo} % Use the Palatino font by default if you prefer it to Computer Modern
+% \usepackage{mathpazo} % Use the Palatino font by default if you prefer it to Computer Modern
 
 \renewcommand{\theequation}{\arabic{equation}} %% use continuous equation numbers
 
@@ -159,7 +162,8 @@ Note that Roman mathematical symbols are typically in a serif font in italics.
 \mainmatter
 \input{introduction/introduction.tex}
 \input{background/background.tex}
-\input{project/project.tex}
+\input{design/design.tex}
+\input{implementation/implementation.tex}
 \input{evaluation/evaluation.tex}
 \input{conclusion/conclusion.tex}
 \bibliographystyle{agsm}
@@ -167,7 +171,6 @@ Note that Roman mathematical symbols are typically in a serif font in italics.
 \setcitestyle{semicolon}
 \appendix
 \renewcommand{\thechapter}{A\arabic{chapter}}
-\input{appendix/appendix.tex}
 
 
 \end{document}

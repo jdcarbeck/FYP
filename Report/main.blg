@@ -10,47 +10,46 @@ Warning--I didn't find a database entry for "jordan2001array"
 Warning--I didn't find a database entry for "paidoussis2010fluid"
 Warning--I didn't find a database entry for "reyes2007power"
 Warning--I didn't find a database entry for "iea2011"
-Warning--I didn't find a database entry for "shustek2008interview"
-Warning--I didn't find a database entry for "oetiker2001not"
-You've used 10 entries,
+Warning--there's a number but no series in jones1999automatic
+You've used 82 entries,
             2909 wiz_defined-function locations,
-            711 strings with 6916 characters,
-and the built_in function-call counts, 38143 in all, are:
-= -- 6118
-> -- 535
-< -- 1
-+ -- 2857
-- -- 161
-* -- 3231
-:= -- 7675
-add.period$ -- 10
-call.type$ -- 10
-change.case$ -- 139
-chr.to.int$ -- 10
-cite$ -- 10
-duplicate$ -- 202
-empty$ -- 390
-format.name$ -- 197
-if$ -- 6905
+            1108 strings with 20638 characters,
+and the built_in function-call counts, 342561 in all, are:
+= -- 55298
+> -- 4933
+< -- 4
++ -- 26067
+- -- 1491
+* -- 29384
+:= -- 68349
+add.period$ -- 82
+call.type$ -- 82
+change.case$ -- 1146
+chr.to.int$ -- 82
+cite$ -- 83
+duplicate$ -- 1656
+empty$ -- 3185
+format.name$ -- 1822
+if$ -- 62104
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 11
-newline$ -- 33
-num.names$ -- 104
-pop$ -- 53
+missing$ -- 84
+newline$ -- 251
+num.names$ -- 857
+pop$ -- 431
 preamble$ -- 1
-purify$ -- 150
+purify$ -- 1230
 quote$ -- 0
-skip$ -- 179
+skip$ -- 1470
 stack$ -- 0
-substring$ -- 8549
-swap$ -- 56
-text.length$ -- 141
+substring$ -- 77503
+swap$ -- 456
+text.length$ -- 1152
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 38
-warning$ -- 0
-while$ -- 231
+type$ -- 324
+warning$ -- 1
+while$ -- 1891
 width$ -- 0
-write$ -- 141
-(There were 9 warnings)
+write$ -- 1137
+(There were 8 warnings)
