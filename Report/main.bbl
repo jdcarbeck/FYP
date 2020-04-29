@@ -41,6 +41,13 @@ Blei, D.~M., Ng, A.~Y. \harvardand\ Jordan, M.~I.  \harvardyearleft
   2003\harvardyearright , `Latent dirichlet allocation', {\em Journal of
   machine Learning research} {\bf 3}(Jan),~993--1022.
 
+\harvarditem{Carbonell \harvardand\ Goldstein}{1998}{carbonell1998use}
+Carbonell, J. \harvardand\ Goldstein, J.  \harvardyearleft
+  1998\harvardyearright , The use of mmr, diversity-based reranking for
+  reordering documents and producing summaries, {\em in} `Proceedings of the
+  21st annual international ACM SIGIR conference on Research and development in
+  information retrieval', pp.~335--336.
+
 \harvarditem{Carpineto \harvardand\ Romano}{2012}{carpineto2012survey}
 Carpineto, C. \harvardand\ Romano, G.  \harvardyearleft 2012\harvardyearright ,
   `A survey of automatic query expansion in information retrieval', {\em Acm
@@ -111,6 +118,13 @@ Dunning, T.  \harvardyearleft 1993\harvardyearright , `Accurate methods for the
 Erkan, G. \harvardand\ Radev, D.~R.  \harvardyearleft 2004\harvardyearright ,
   `Lexrank: Graph-based lexical centrality as salience in text summarization',
   {\em Journal of artificial intelligence research} {\bf 22},~457--479.
+
+\harvarditem[Fabbri et~al.]{Fabbri, Li, She, Li \harvardand\
+  Radev}{2019}{fabbri2019multi}
+Fabbri, A.~R., Li, I., She, T., Li, S. \harvardand\ Radev, D.~R.
+  \harvardyearleft 2019\harvardyearright , `Multi-news: a large-scale
+  multi-document summarization dataset and abstractive hierarchical model',
+  {\em arXiv preprint arXiv:1906.01749} .
 
 \harvarditem{Fattah}{2014}{fattah2014hybrid}
 Fattah, M.~A.  \harvardyearleft 2014\harvardyearright , `A hybrid machine
@@ -208,6 +222,12 @@ Jones, K.~S. et~al.  \harvardyearleft 1999\harvardyearright , Automatic
   summarizing: factors and directions, {\em in} `Advances in automatic text
   summarization', number~1, MIT press Cambridge, Mass, USA, pp.~1--12.
 
+\harvarditem{Khurana \harvardand\ Bhatnagar}{2019}{khurana2019extractive}
+Khurana, A. \harvardand\ Bhatnagar, V.  \harvardyearleft 2019\harvardyearright
+  , Extractive document summarization using non-negative matrix factorization,
+  {\em in} `International Conference on Database and Expert Systems
+  Applications', Springer, pp.~76--90.
+
 \harvarditem[Kim et~al.]{Kim, Kim \harvardand\ Cho}{2017}{kim2017bag}
 Kim, H.~K., Kim, H. \harvardand\ Cho, S.  \harvardyearleft
   2017\harvardyearright , `Bag-of-concepts: Comprehending document
@@ -218,6 +238,13 @@ Kim, H.~K., Kim, H. \harvardand\ Cho, S.  \harvardyearleft
 Kiss, T. \harvardand\ Strunk, J.  \harvardyearleft 2006\harvardyearright ,
   `Unsupervised multilingual sentence boundary detection', {\em Computational
   linguistics} {\bf 32}(4),~485--525.
+
+\harvarditem[Lebanoff et~al.]{Lebanoff, Song \harvardand\
+  Liu}{2018}{lebanoff2018adapting}
+Lebanoff, L., Song, K. \harvardand\ Liu, F.  \harvardyearleft
+  2018\harvardyearright , `Adapting the neural encoder-decoder framework from
+  single to multi-document summarization', {\em arXiv preprint
+  arXiv:1808.06218} .
 
 \harvarditem[Li et~al.]{Li, Liu \harvardand\
   Zhao}{2015}{li-etal-2015-improving-update}
@@ -254,6 +281,11 @@ Lin, C.-Y. \harvardand\ Hovy, E.  \harvardyearleft 2000\harvardyearright , The
   `Proceedings of the 18th conference on Computational linguistics-Volume 1',
   Association for Computational Linguistics, pp.~495--501.
 
+\harvarditem{Liu \harvardand\ Lapata}{2019}{liu2019text}
+Liu, Y. \harvardand\ Lapata, M.  \harvardyearleft 2019\harvardyearright , `Text
+  summarization with pretrained encoders', {\em arXiv preprint
+  arXiv:1908.08345} .
+
 \harvarditem{Luhn}{1958}{luhn1958automatic}
 Luhn, H.~P.  \harvardyearleft 1958\harvardyearright , `The automatic creation
   of literature abstracts', {\em IBM Journal of research and development} {\bf
@@ -267,11 +299,24 @@ Mehrotra, R. \harvardand\ Yilmaz, E.  \harvardyearleft 2015\harvardyearright ,
   York, NY, USA, p.~131–140.
 \newline\harvardurl{https://doi.org/10.1145/2808194.2809467}
 
-\harvarditem[Mikolov et~al.]{Mikolov, Chen, Corrado \harvardand\
+\harvarditem{Mihalcea \harvardand\ Tarau}{2004}{mihalcea2004textrank}
+Mihalcea, R. \harvardand\ Tarau, P.  \harvardyearleft 2004\harvardyearright ,
+  Textrank: Bringing order into text, {\em in} `Proceedings of the 2004
+  conference on empirical methods in natural language processing',
+  pp.~404--411.
+
+\harvarditem{Mikolov, Chen, Corrado \harvardand\
   Dean}{2013}{mikolov2013efficient}
 Mikolov, T., Chen, K., Corrado, G. \harvardand\ Dean, J.  \harvardyearleft
   2013\harvardyearright , `Efficient estimation of word representations in
   vector space', {\em arXiv preprint arXiv:1301.3781} .
+
+\harvarditem{Mikolov, Sutskever, Chen, Corrado \harvardand\
+  Dean}{2013}{mikolov2013distributed}
+Mikolov, T., Sutskever, I., Chen, K., Corrado, G.~S. \harvardand\ Dean, J.
+  \harvardyearleft 2013\harvardyearright , Distributed representations of words
+  and phrases and their compositionality, {\em in} `Advances in neural
+  information processing systems', pp.~3111--3119.
 
 \harvarditem[Mitchell et~al.]{Mitchell, OSullivan \harvardand\
   Dunning}{2011}{mitchell2011pulp}
@@ -403,6 +448,11 @@ Sarker, A., Moll{\'a}, D. \harvardand\ Paris, C.  \harvardyearleft
   evidence based medicine, {\em in} `Conference on Artificial Intelligence in
   Medicine in Europe', Springer, pp.~295--304.
 
+\harvarditem[See et~al.]{See, Liu \harvardand\ Manning}{2017}{see2017get}
+See, A., Liu, P.~J. \harvardand\ Manning, C.~D.  \harvardyearleft
+  2017\harvardyearright , `Get to the point: Summarization with
+  pointer-generator networks', {\em arXiv preprint arXiv:1704.04368} .
+
 \harvarditem{Sievert \harvardand\ Shirley}{2014}{sievert2014ldavis}
 Sievert, C. \harvardand\ Shirley, K.  \harvardyearleft 2014\harvardyearright ,
   Ldavis: A method for visualizing and interpreting topics, {\em in}
@@ -494,9 +544,29 @@ Yih, W.-t., Goodman, J., Vanderwende, L. \harvardand\ Suzuki, H.
   maximizing informative content-words., {\em in} `IJCAI', Vol.~7,
   pp.~1776--1782.
 
+\harvarditem[Zhang et~al.]{Zhang, Wei \harvardand\ Zhou}{2019}{zhang2019hibert}
+Zhang, X., Wei, F. \harvardand\ Zhou, M.  \harvardyearleft
+  2019\harvardyearright , `Hibert: Document level pre-training of hierarchical
+  bidirectional transformers for document summarization', {\em arXiv preprint
+  arXiv:1905.06566} .
+
 \harvarditem{Zhao \harvardand\ Mao}{2017}{zhao2017fuzzy}
 Zhao, R. \harvardand\ Mao, K.  \harvardyearleft 2017\harvardyearright , `Fuzzy
   bag-of-words model for document representation', {\em IEEE Transactions on
   Fuzzy Systems} {\bf 26}(2),~794--804.
+
+\harvarditem[Zhong et~al.]{Zhong, Liu, Wang, Qiu \harvardand\
+  Huang}{2019}{zhong2019searching}
+Zhong, M., Liu, P., Wang, D., Qiu, X. \harvardand\ Huang, X.  \harvardyearleft
+  2019\harvardyearright , `Searching for effective neural extractive
+  summarization: What works and what's next', {\em arXiv preprint
+  arXiv:1907.03491} .
+
+\harvarditem[Zhou et~al.]{Zhou, Yang, Wei, Huang, Zhou \harvardand\
+  Zhao}{2018}{zhou2018neural}
+Zhou, Q., Yang, N., Wei, F., Huang, S., Zhou, M. \harvardand\ Zhao, T.
+  \harvardyearleft 2018\harvardyearright , `Neural document summarization by
+  jointly learning to score and select sentences', {\em arXiv preprint
+  arXiv:1807.02305} .
 
 \end{thebibliography}

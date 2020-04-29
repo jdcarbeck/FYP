@@ -135,7 +135,7 @@ The model is formed from the following generative process
       \item Choose a multinomial distribution $\phi_t$ for topic $t$ ($t \in \{1,\dots,T\}$) from a Dirichlet distribution with parameter $\beta$.
       \item Choose a multinomial distribution $\theta_d$ for document $d$ ($d \in \{1,\dots,M\}$) from a Dirichlet distribution with parameter $\alpha$.
       \item For a word $w_n$ ($n \in \{1,\dots,{N_d}\}$) in document $d$.
-      \begin{enumerate}[]
+      \begin{enumerate}
             \item Select a topic $z_n$ from $\theta_d$.
             \item Select a word $w_n$ from $\phi_{zn}$
       \end{enumerate}
@@ -176,7 +176,7 @@ Topic representations such as LSA and LDA realy traditionally on words as units 
 The representation of a corpus text is most commonly a bag-of-words representation, which represents a corpus as a list of documents where each document is a list of words and their frequencies. A bag-of-concepts representation, represents a corpus as a list of documents where each document is a list of concepts. A concept is the extracted unit of meaning That is then used in the formation of a topic model.
 
 \subsubsection{Embedded data approaches}
-Word embeddings are a distributed representation of words in vector space, where semantic and syntactic properties of words are preserved. Unsupervised learning methods can use large scale to train a model to extract word embeddings \citep{mikolov2013efficient,mikolov2013efficient,pennington2014glove}. The pretrained models can then be used to extract word embedding which are then treated as concepts of the document. Another approach is through the extension of word2vec. Word2vec assumes that words that occur in similar contexts tend to have the same meanings. This method uses a simple neural network which models all the words in a document into a continuous vector space. \citet{kim2017bag} present a method that constructs a bag-of-concepts representation from first constructing word vectors of documents via a skip-gram model of word2vec. Then a neural network of context words is used to predict following words for a document in non-linear semantic space. Word vectors with similar context are embedded into neighboring semantic space. The word vectors are then clustered via k-mean clustering. The result of the clustering is a document represented by concepts which are identified from the center of each cluster. \citet{zhao2017fuzzy} present a fuzzy bag of words model which uses fuzzy mapping of words based on word embedding similarities to capture the semantic similarities between words. These methods all use the embedded information within a document set to construct concepts. 
+Word embeddings are a distributed representation of words in vector space, where semantic and syntactic properties of words are preserved. Unsupervised learning methods can use large scale to train a model to extract word embeddings \citep{mikolov2013efficient,mikolov2013distributed,pennington2014glove}. The pretrained models can then be used to extract word embedding which are then treated as concepts of the document. Another approach is through the extension of word2vec. Word2vec assumes that words that occur in similar contexts tend to have the same meanings. This method uses a simple neural network which models all the words in a document into a continuous vector space. \citet{kim2017bag} present a method that constructs a bag-of-concepts representation from first constructing word vectors of documents via a skip-gram model of word2vec. Then a neural network of context words is used to predict following words for a document in non-linear semantic space. Word vectors with similar context are embedded into neighboring semantic space. The word vectors are then clustered via k-mean clustering. The result of the clustering is a document represented by concepts which are identified from the center of each cluster. \citet{zhao2017fuzzy} present a fuzzy bag of words model which uses fuzzy mapping of words based on word embedding similarities to capture the semantic similarities between words. These methods all use the embedded information within a document set to construct concepts. 
 
 \subsubsection{Entity Identification}
 Methods use entity identification, use external knowledge bases to extract entities of a document, as well as to perform word sense disambiguation. This representation achieves better performance as it forms a superior representation of a document reading to be used in topic modeling. \citet{rajagopal2013commonsense} extract concepts from the chunking sentences into parts of speech, then selecting verb and noun chunks. These chunks are stemmed and then centralised using INTELNET knowledge base. This method outperformed the state-of-the-art LDA topic representation on the Brown corpus. \citet{li2016cross} present a similar approach where concepts are extracted from an information extraction engine Sematex. Sematex tags named entities and subject verb objects. These tagged elements are used to create a list of concepts from a document. A similar method is presented by \citet{wang2014concept} recognised entities from a Backward Maximum Matching method and then centralised found entities using Probase, knowledge base. These methods directly construct a similar representation to bag-of-words, making them an easy enhancement to topic modeling, while maintaining the word dependencies. The representational performance of produced document vectors is limited by the semantic models quality on the domain of the document it's being used on. These methods have demonstrated that reconisigning entities as concepts outperforms models constructed on the same corpus using a bag-of-words.
@@ -193,6 +193,7 @@ Personalisation at the summary level means that sentences are scored for candica
 Document graphs have been used to directly create a representation of input documents so that sentences can be scored for their relevance to a query. Graph based approaches were presented in section 2.3.3. To review the basic steps used in a graph based summarisation approach are \citep{rahman2015survey}:
 
 \begin{itemize}
+      \itemsep0em 
       \item Pre-processing Tasks
       \item Building a Graph Model
       \item Applying Ranking Algorithm
@@ -209,6 +210,7 @@ Another graph based method is presented by \citet{pandit2013query} which forms a
 Feature based approaches assign a significance to each score and the highest scoring sentences are selected for the summary. The general steps of feature based summarisation are \citep{rahman2015survey}:
 
 \begin{itemize}
+      \itemsep0em 
       \item Find efficient features to determine similarity between sentences and query.
       \item Calculate and assign significance score from features.
       \item Cluster sentence based on similarity values.
@@ -272,91 +274,3 @@ This metric is based on finding the longest common sequence (LCS) between two se
 
 \section{Summary of Review}
 The review presented here presents a review of the field of automatic text summarisation. The taxonomy of the field provides the terminology and classifications necessary to ground this work within the field of automatic text summarisation. The classifications and universal tasks are fundamental to approaching a summarisation system, as they act to limit the scope of methods to consider for the systems design, and provide a description of a systems functionality at a high level. The review of existing methods of extractive summarisation inform the decision process of what intermediate representation would serve a specific domain summarisation system. The methods explored for personalisation also inform how the system could be constructed to better reduce information overload from the personalisation of summaries. Lastly the review of evaluation techniques serves to identify how the proposed system can be evaluated to determine the extent to which it can perform personalised domain specific summarisation, as well the limitations of the evaluation. The content here provides the fundamental ideas which inform the process for designing and evaluating the system. 
-
-\section{Figures}
-Graphs, pictures and other images should be included in your report as a numbered, captioned figure. An example is given in Figure \ref{veldis}.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[h]
-      \centering
-      \includegraphics{background/5e1-1.pdf}
-      \caption{Velocity distribution on the mid-plane for an inlet velocity for case 1.}
-      \label{veldis}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-The figure and caption should be centred. The figure numbering starts at 1 at the beginning of each chapter. The caption should provide a brief description of what is being shown. The figure should appear in the document after it is referred to in the text. No figure should be included which is not referred to in the text. Ensure that the size and resolution of images imported from software are sufficient to read any text.
-
-\section{Tables}
-Tables are an important way of displaying your results; Table \ref{tab:treatments} is a sample table, adapted from the Master/Doctoral Thesis template at \url{http://www.latextemplates.com/cat/theses}, which was generated with this code:
-
-{\footnotesize
-\begin{verbatim}
-\begin{table}[b]
-\caption{The effects of treatments X and Y on the four groups studied.}
-\label{tab:treatments}
-\centering
-\begin{tabular}{l l l}
-\toprule
-\textbf{Groups} & \textbf{Treatment X} & \textbf{Treatment Y} \\\midrule
-1 & 0.2 & 0.8\\
-2 & 0.17 & 0.7\\
-3 & 0.24 & 0.75\\
-4 & 0.68 & 0.3\\
-\bottomrule\\
-\end{tabular}
-\end{table}
-\end{verbatim}
-}
-
-\begin{table}[b]
-\caption{The effects of treatments X and Y on the four groups studied.}
-\label{tab:treatments}
-\centering
-\begin{tabular}{l l l}
-\toprule
-\textbf{Groups} & \textbf{Treatment X} & \textbf{Treatment Y} \\
-\midrule
-1 & 0.2 & 0.8\\
-2 & 0.17 & 0.7\\
-3 & 0.24 & 0.75\\
-4 & 0.68 & 0.3\\
-\bottomrule\\
-\end{tabular}
-\end{table}
-
-Tables are numbered in the same way as figures. Typically tables also have a short caption, but this is not universally true. The number and caption appear above the table, not below as with figures. Again, no table should appear in the report which has not been referred to in the text. Tables should come after they are discussed in the text. The exact formatting of the table depends somewhat on the content of the table, but in general, the text in the table should be the same font and size as the main text. 
-
-\section{Equations}
-All equations should be numbered sequentially. Do not restart the numbering at the beginning of each chapter. Unlike figures and tables, you may not need to refer to every equation in the text. You should take care to format equations properly. Do no simply try to use plain text. Use the equation layout facilities. An example of how equations should appear is shown in Equation \ref{sampleequation}. Here is the code for it:
-
-{\footnotesize
-\begin{verbatim}
-\begin{equation}
-\textrm{div}(\underline{u}) = \frac{\delta u}{\delta x} + \frac{\delta v}{\delta y} +
-        \frac{\delta w}{\delta z} = 0
-\label{sampleequation}
-\end{equation} 
-\end{verbatim}
-}
-
-\begin{equation}
-\textrm{div}(\underline{u}) = \frac{\delta u}{\delta x} + \frac{\delta v}{\delta y} + \frac{\delta w}{\delta z} = 0
-\label{sampleequation}
-\end{equation} 
-
-\section{Referencing published work}
-It is important to give appropriate credit to other people for the work that they have shared through publications. In fact, you must sign a declaration in your report stating that you understand the nature of plagiarism. As well as avoiding plagiarism, citing results or data from the literature can strengthen your argument, provide a favourable comparison for your results, or even demonstrate how superior your work is.
-
-There are many styles to reference published work. For example, the parenthetical style (which is also called the Harvard style) uses the author and date of publication (e.g. ``Smith and Jones, 2001''). There is also the Vancouver (or the citation sequence) style, which is shown in this document. In the Vancouver style, the publications are cited using a bracket number which refers to the list in the References section at the end of the report. The references are listed in order that they are cited in the report. A variant is name sequence style in which the publications are referenced by number, but the list is arranged alphabetically. For example, the text might say: several studies have examined the sound field around tandem cylinders generated by flow\cite{fitzpatrick2003flow,finnegan2010experimental}, while other investigations have focused on the effect of an applied sound field on the flow\cite{hall2003vortex}. Papers from conference proceedings\cite{jordan2001array}, books\cite{paidoussis2010fluid} and technical reports\cite{reyes2007power,iea2011} can be dealt with in the same style.
-
-The Vancouver style has the advantage that it is a little more compact in the text and does not distract from the flow of the sentence if there are a lot of citations. However, it has the disadvantage that it is not immediately clear to the reader what particular work has been referenced.
-
-It actually does not matter which particular referencing style is used as long as three important considerations are observed:
-\begin{itemize}
-\item the referencing style used throughout the document is consistent;
-\item all material used or discussed in the text is properly cited;
-\item nothing is included in the reference list that has not been cited.
-\end{itemize}
-
-This template has a suitable referencing style already set up -- you should use it and use the built-in BibTeX system to manage your references. See above for examples of how to cite a reference and look in the \texttt{sample.bib} file to see BibTeX references. Remember \href{http://scholar.google.com}{Google Scholar} and other search engines will give you BibTeX references for lots of academic publications. Otherwise, you can easily make up your own based on the examples in that file.

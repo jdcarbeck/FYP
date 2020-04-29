@@ -1,9 +1,10 @@
 \chapter{Implementation}
+\label{chp:4}
 This chapter presents the implementation of the design of the proposed summarisation system. The implementation presented in this chapter was used to assess the design’s limitations and efficacy for performing domain specific personalisation without the use of domain models. The methods used in the system design were implemented from their respective papers. Due to the availability of libraries available for text processing and topic modeling, this system was implemented using python 3.7.4 \citep{van2009python}. The existing methods selected to perform tasks of the system were implemented within python classes. Each python class encapsulates a number of methods from the identified design. The class structure for which the methods were implemented is unimportant to the system’s functionality, so this chapter will focus on the operations performed, using these classes. The functionality of the implemented system is presented in Figure \ref{designI}. The system uses three main processes to create extractive personalised summaries. Each process contains a set of relevant child processes. First, the Model and Corpus Generation process creates an annotated corpus and a topic model from a set of raw Wikipedia articles. Then the Query-based Document Retrieval process uses a query to retrieve relevant documents using the annotated corpus and topic model. Last, the Summary Generation process creates a summary from the sentences contained within the query relevant documents. Each of these processes implementations is presented in detail in sections of this chapter. 
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
-         \includegraphics[width=0.70\textwidth]{Figures/System_Design_Overview.jpg}
+         \includegraphics[width=0.80\textwidth]{Figures/System_Design_Overview.jpg}
           \caption{Design of system implemenation processes.}
            \label{designI}
 \end{figure}
@@ -11,13 +12,15 @@ This chapter presents the implementation of the design of the proposed summarisa
 \section{Model and Corpus Generation}
 The Model and Corpus Generation process of the system produces a meta-data annotated corpus and topic model. This process of the system is done via three child processes, text extraction from source material, concept extraction from text, and the creation of an annotated corpus used in the creation of a topic model. These processes are broken down in Figure \ref{modelDesign}.
 
-\begin{figure}[h]
+Where $D$ is the document set extracted from articles, and $|D|$ is the number of documents extracted from source articles. $s_i$ is sentences in each document and $|d_i|$ is the number of sentences in each document. $c_i$ are the concepts extracted from $s_i$ and $|s_i|$ is the number of concepts in sentence $s_i$. $C_i$ is the set of concepts in sentence $s_i$. $t_i$ are the latent of topics determined by the model given $k$ is the number of topics. $m$ is the number of different concepts found in corpus $D$.
+
+\begin{figure}[H]
     \centering
-         \includegraphics[width=0.70\textwidth]{Figures/System_Design_Model_Gen.jpg}
+         \includegraphics[width=0.90\textwidth]{Figures/System_Design_Model_Gen.jpg}
           \caption{Process of Model and Corpus Generation.}
            \label{modelDesign}
 \end{figure}
-Where $D$ is the document set extracted from articles, and $|D|$ is the number of documents extracted from source articles. $s_i$ is sentences in each document and $|d_i|$ is the number of sentences in each document. $c_i$ are the concepts extracted from $s_i$ and $|s_i|$ is the number of concepts in sentence $s_i$. $C_i$ is the set of concepts in sentence $s_i$. $t_i$ are the latent of topics determined by the model given $k$ is the number of topics. $m$ is the number of different concepts found in corpus $D$.
+
 
 \subsection{Text Extraction}
 This process takes a set of Wikipedia articles and extracts their textual content to be used in the creation of the corpus which is used in the formation of the topic model. Articles were downloaded using Wikipedia’s export system\footnote{\url{https://en.wikipedia.org/wiki/Special:Export}}. The export consists of a XML document that contains articles based on a given list of article titles. The list of articles were those that were in the category of “Watergate Scandal” on Wikipedia. The Wikipedia XML dump was processed using a python script called WikiExtractor\footnote{\url{https://github.com/attardi/wikiextractor}}. This script produces a simplified XML document from a Wikipedia dump that contains a <doc> element for each article. Each <doc> element contains just the text within the article, where every line in the doc tag is a paragraph in the article. Each <doc> element also contains a id, url, and title attribute unique to the article it contains. 
@@ -93,6 +96,7 @@ def gen_con2sen(self):
 \end{lstlisting}
 
 \subsection{Concept Extraction}
+\label{subsec:4.1.2}
 Concepts are extracted from the creation of a Concepts object which is in the Concepts class in ConceptExtract.py. Plain text is first preprocessed using the word\_tokenize() method defined in the nltk package. This method splits off punctuation other than periods in the raw text. Then the tokenized text is passed to the concept\_chunk() method. The concept\_chunk method performs phrase chunking on the inputted text. Phrase chunking segments a sentence based on its subconstituents, such as noun (NP), verb (VP), and prepositional phrases (PP).  To perform chunking, the nltk class RegexParser was used. This class takes in grammar to use for the chunking of text. The grammar that was defined is the following:
 
 \begin{lstlisting}
@@ -102,7 +106,6 @@ Concepts are extracted from the creation of a Concepts object which is in the Co
     PP: {<P> <NP>}			# PP -> P NP
     VP: {<V> <NP|PP>*}		# VP -> V (NP|PP)*
 \end{lstlisting}
-
 The output from the chunking produces a tree which is then traversed to extract terms with noun pair labels. An example of this is seen in Figure \ref{tree} which is a visualisation produced from the draw() method on the returned tree object from the RegexParser from chunking of the following sentence: “Nixon’s White House address”.
 \begin{figure}[h]
     \centering

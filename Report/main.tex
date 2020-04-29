@@ -65,7 +65,15 @@
 \usepackage{booktabs} % To thicken table lines
 \usepackage{fancyhdr}
 \usepackage{ragged2e}
-
+\usepackage{float}% If comment this, figure moves to Page 2
+\usepackage{array}
+\newcolumntype{L}{>{\centering\arraybackslash}m{4cm}}
+\newcolumntype{W}{>{\centering\arraybackslash}m{3.5cm}}
+\newcolumntype{Z}{>{\centering\arraybackslash}m{5cm}}
+\newcolumntype{X}{>{\arraybackslash}m{10cm}}
+\newcolumntype{Y}{>{\arraybackslash}m{15cm}}
+\newcommand\Tstrut{\rule{0pt}{2.6ex}}         % = `top' strut
+\newcommand\Bstrut{\rule[-0.9ex]{0pt}{0pt}}   % = `bottom' strut
 \pagestyle{plain} % Embrace simplicity!
 
 %% The Mechanical engineers require your name and ID on the top of every page.
@@ -165,6 +173,7 @@ Note that Roman mathematical symbols are typically in a serif font in italics.
 \input{design/design.tex}
 \input{implementation/implementation.tex}
 \input{evaluation/evaluation.tex}
+\input{future/future.tex}
 \input{conclusion/conclusion.tex}
 \bibliographystyle{agsm}
 \bibliography{bibs/sample}

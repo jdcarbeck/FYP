@@ -3,53 +3,46 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: main.aux
 The style file: agsm.bst
 Database file #1: bibs/sample.bib
-Warning--I didn't find a database entry for "fitzpatrick2003flow"
-Warning--I didn't find a database entry for "finnegan2010experimental"
-Warning--I didn't find a database entry for "hall2003vortex"
-Warning--I didn't find a database entry for "jordan2001array"
-Warning--I didn't find a database entry for "paidoussis2010fluid"
-Warning--I didn't find a database entry for "reyes2007power"
-Warning--I didn't find a database entry for "iea2011"
 Warning--there's a number but no series in jones1999automatic
-You've used 82 entries,
+You've used 93 entries,
             2909 wiz_defined-function locations,
-            1108 strings with 20638 characters,
-and the built_in function-call counts, 342561 in all, are:
-= -- 55298
-> -- 4933
+            1151 strings with 22736 characters,
+and the built_in function-call counts, 395792 in all, are:
+= -- 63907
+> -- 5819
 < -- 4
-+ -- 26067
-- -- 1491
-* -- 29384
-:= -- 68349
-add.period$ -- 82
-call.type$ -- 82
-change.case$ -- 1146
-chr.to.int$ -- 82
-cite$ -- 83
-duplicate$ -- 1656
-empty$ -- 3185
-format.name$ -- 1822
-if$ -- 62104
++ -- 30257
+- -- 1766
+* -- 34036
+:= -- 78934
+add.period$ -- 93
+call.type$ -- 93
+change.case$ -- 1300
+chr.to.int$ -- 93
+cite$ -- 94
+duplicate$ -- 1861
+empty$ -- 3551
+format.name$ -- 2138
+if$ -- 71709
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 84
-newline$ -- 251
-num.names$ -- 857
-pop$ -- 431
+missing$ -- 95
+newline$ -- 284
+num.names$ -- 972
+pop$ -- 490
 preamble$ -- 1
-purify$ -- 1230
+purify$ -- 1395
 quote$ -- 0
-skip$ -- 1470
+skip$ -- 1660
 stack$ -- 0
-substring$ -- 77503
-swap$ -- 456
-text.length$ -- 1152
+substring$ -- 89634
+swap$ -- 506
+text.length$ -- 1306
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 324
+type$ -- 368
 warning$ -- 1
-while$ -- 1891
+while$ -- 2136
 width$ -- 0
-write$ -- 1137
-(There were 8 warnings)
+write$ -- 1284
+(There was 1 warning)
