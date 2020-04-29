@@ -201,4 +201,4 @@ def run(test_single=False, test_multi=False, avg=False):
         single_results = avg_rouge(single_doc_results)
         multi_resutlts = avg_rouge(multi_doc_results)
 
-run(test_single=True, test_multi=True, avg=True)
+run(test_single=False, test_multi=False, avg=True)

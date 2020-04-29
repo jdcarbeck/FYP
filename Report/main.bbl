@@ -1,66 +1,65 @@
-\begin{thebibliography}{9}
-\providecommand{\natexlab}[1]{#1}
-\providecommand{\url}[1]{\texttt{#1}}
-\expandafter\ifx\csname urlstyle\endcsname\relax
-  \providecommand{\doi}[1]{doi: #1}\else
-  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+\begin{thebibliography}{xx}
 
-\bibitem[Fitzpatrick(2003)]{fitzpatrick2003flow}
-JA~Fitzpatrick.
-\newblock Flow/acoustic interactions of two cylinders in cross-flow.
-\newblock \emph{Journal of Fluids and Structures}, 17\penalty0 (1):\penalty0
-  97--113, 2003.
+\harvarditem{Bedini \harvardand\ Nguyen}{2007}{bedini2007automatic}
+Bedini, I. \harvardand\ Nguyen, B.  \harvardyearleft 2007\harvardyearright ,
+  `Automatic ontology generation: State of the art', {\em PRiSM Laboratory
+  Technical Report. University of Versailles} .
 
-\bibitem[Finnegan et~al.(2010)Finnegan, Meskell, and
-  Ziada]{finnegan2010experimental}
-SL~Finnegan, C~Meskell, and S~Ziada.
-\newblock Experimental investigation of the acoustic power around two tandem
-  cylinders.
-\newblock \emph{Journal of Pressure Vessel Technology}, 132\penalty0
-  (4):\penalty0 041306, 2010.
+\harvarditem{Carpineto \harvardand\ Romano}{2012}{carpineto2012survey}
+Carpineto, C. \harvardand\ Romano, G.  \harvardyearleft 2012\harvardyearright ,
+  `A survey of automatic query expansion in information retrieval', {\em Acm
+  Computing Surveys (CSUR)} {\bf 44}(1),~1--50.
 
-\bibitem[Hall et~al.(2003)Hall, Ziada, and Weaver]{hall2003vortex}
-JW~Hall, S~Ziada, and DS~Weaver.
-\newblock Vortex-shedding from single and tandem cylinders in the presence of
-  applied sound.
-\newblock \emph{Journal of Fluids and Structures}, 18\penalty0 (6):\penalty0
-  741--758, 2003.
+\harvarditem{Chiaramella}{2000}{chiaramella2000information}
+Chiaramella, Y.  \harvardyearleft 2000\harvardyearright , Information retrieval
+  and structured documents, {\em in} `European Summer School on Information
+  Retrieval', Springer, pp.~286--309.
 
-\bibitem[Jordan et~al.(2001)Jordan, Fitzpatrick, and Meskell]{jordan2001array}
-Peter Jordan, John Fitzpatrick, and Craig Meskell.
-\newblock Array beam pattern control for measurement of propeller noise.
-\newblock In \emph{AIAA/CEAS Aeroacoustics Conference and Exhibit, Maastricht,
-  Netherlands}, 2001.
+\harvarditem[Galgani et~al.]{Galgani, Compton \harvardand\
+  Hoffmann}{2012}{galgani2012combining}
+Galgani, F., Compton, P. \harvardand\ Hoffmann, A.  \harvardyearleft
+  2012\harvardyearright , Combining different summarization techniques for
+  legal text, {\em in} `Proceedings of the workshop on innovative hybrid
+  approaches to the processing of textual data', Association for Computational
+  Linguistics, pp.~115--123.
 
-\bibitem[Pa{\"\i}doussis et~al.(2010)Pa{\"\i}doussis, Price, and
-  De~Langre]{paidoussis2010fluid}
-Michael~P Pa{\"\i}doussis, Stuart~J Price, and Emmanuel De~Langre.
-\newblock \emph{Fluid-structure interactions: cross-flow-induced
-  instabilities}.
-\newblock Cambridge University Press, 2010.
+\harvarditem[Ge et~al.]{Ge, Chen, Peng \harvardand\ Li}{2012}{ge2012ontology}
+Ge, J., Chen, Z., Peng, J. \harvardand\ Li, T.  \harvardyearleft
+  2012\harvardyearright , An ontology-based method for personalized
+  recommendation, {\em in} `2012 IEEE 11th International Conference on
+  Cognitive Informatics and Cognitive Computing', IEEE, pp.~522--526.
 
-\bibitem[Reyes(2007)]{reyes2007power}
-L~Reyes.
-\newblock Power uprate program status report-secy-07-0090.
-\newblock Technical report, Technical Report, US Nuclear Regulatory Commission,
-  2007.
+\harvarditem[Goldstein et~al.]{Goldstein, Mittal, Carbonell \harvardand\
+  Kantrowitz}{2000}{goldstein2000multi}
+Goldstein, J., Mittal, V., Carbonell, J. \harvardand\ Kantrowitz, M.
+  \harvardyearleft 2000\harvardyearright , Multi-document summarization by
+  sentence extraction, {\em in} `Proceedings of the 2000 NAACL-ANLP Workshop on
+  Automatic summarization', Association for Computational Linguistics,
+  pp.~40--48.
 
-\bibitem[{International Energy Agency}()]{iea2011}
-{International Energy Agency}.
-\newblock {Technology Roadmap --- Geothermal Heat and Power}.
-\newblock
-  \url{https://www.iea.org/publications/freepublications/publication/Geothermal_Roadmap.pdf}.
+\harvarditem{Gross}{1964}{gross1964managing}
+Gross, B.~M.  \harvardyearleft 1964\harvardyearright , {\em The managing of
+  organizations: The administrative struggle}, Vol.~2, [New York]: Free Press
+  of Glencoe.
 
-\bibitem[Shustek and Interviewee-Knuth(2008)]{shustek2008interview}
-Len Shustek and Donald Interviewee-Knuth.
-\newblock Interview donald knuth: A life's work interrupted.
-\newblock \emph{Communications of the ACM}, 51\penalty0 (8):\penalty0 31--35,
-  2008.
+\harvarditem{Roetzel}{2019}{roetzel2019information}
+Roetzel, P.~G.  \harvardyearleft 2019\harvardyearright , `Information overload
+  in the information age: a review of the literature from business
+  administration, business psychology, and related disciplines with a
+  bibliometric approach and framework development', {\em Business Research}
+  {\bf 12}(2),~479--522.
 
-\bibitem[Oetiker et~al.(2001)Oetiker, Partl, Hyna, and Schlegl]{oetiker2001not}
-Tobias Oetiker, Hubert Partl, Irene Hyna, and Elisabeth Schlegl.
-\newblock The not so short introduction to latex 2$\varepsilon$.
-\newblock 2001.
-\newblock \url{https://doi.org/10.3929/ethz-a-004398225}.
+\harvarditem[Sarker et~al.]{Sarker, Moll{\'a} \harvardand\
+  Paris}{2013}{sarker2013approach}
+Sarker, A., Moll{\'a}, D. \harvardand\ Paris, C.  \harvardyearleft
+  2013\harvardyearright , An approach for query-focused text summarisation for
+  evidence based medicine, {\em in} `Conference on Artificial Intelligence in
+  Medicine in Europe', Springer, pp.~295--304.
+
+\harvarditem{Soucek \harvardand\ Moser}{2010}{soucek2010coping}
+Soucek, R. \harvardand\ Moser, K.  \harvardyearleft 2010\harvardyearright ,
+  `Coping with information overload in email communication: Evaluation of a
+  training intervention', {\em Computers in Human Behavior} {\bf
+  26}(6),~1458--1466.
 
 \end{thebibliography}

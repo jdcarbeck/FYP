@@ -41,7 +41,8 @@
 \usepackage[english]{babel}
 
 %% Bibliographical stuff
-\usepackage[round,sort,comma,numbers]{natbib}
+\usepackage[]{natbib}
+
 
 %% Document size
 % include showframe as an option if you want to see the boxes
@@ -60,6 +61,7 @@
 \usepackage{enumerate} % fancy enumerations like (i) (ii) or (a) (b) and suchlike
 \usepackage{booktabs} % To thicken table lines
 \usepackage{fancyhdr}
+\usepackage{ragged2e}
 
 \pagestyle{plain} % Embrace simplicity!
 
@@ -97,6 +99,7 @@
 
 \frontmatter
 
+\setlength{\parskip}{1em}
 
 \begin{document}
 \input{title/title.tex}
@@ -159,8 +162,9 @@ Note that Roman mathematical symbols are typically in a serif font in italics.
 \input{project/project.tex}
 \input{evaluation/evaluation.tex}
 \input{conclusion/conclusion.tex}
-\bibliographystyle{unsrtnat}
+\bibliographystyle{agsm}
 \bibliography{bibs/sample}
+\setcitestyle{semicolon}
 \appendix
 \renewcommand{\thechapter}{A\arabic{chapter}}
 \input{appendix/appendix.tex}

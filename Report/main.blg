@@ -1,51 +1,56 @@
 This is BibTeX, Version 0.99d (TeX Live 2018)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: main.aux
-The style file: unsrtnat.bst
+The style file: agsm.bst
 Database file #1: bibs/sample.bib
-Warning--entry type for "iea2011" isn't style-file defined
---line 55 of file bibs/sample.bib
-Warning--empty year in iea2011
-Warning--empty journal in oetiker2001not
-You've used 9 entries,
-            2481 wiz_defined-function locations,
-            603 strings with 5932 characters,
-and the built_in function-call counts, 3060 in all, are:
-= -- 249
-> -- 147
-< -- 4
-+ -- 60
-- -- 42
-* -- 220
-:= -- 500
-add.period$ -- 28
-call.type$ -- 9
-change.case$ -- 18
-chr.to.int$ -- 9
-cite$ -- 11
-duplicate$ -- 163
-empty$ -- 296
-format.name$ -- 53
-if$ -- 639
-int.to.chr$ -- 1
-int.to.str$ -- 10
-missing$ -- 8
-newline$ -- 54
-num.names$ -- 27
-pop$ -- 85
+Warning--I didn't find a database entry for "fitzpatrick2003flow"
+Warning--I didn't find a database entry for "finnegan2010experimental"
+Warning--I didn't find a database entry for "hall2003vortex"
+Warning--I didn't find a database entry for "jordan2001array"
+Warning--I didn't find a database entry for "paidoussis2010fluid"
+Warning--I didn't find a database entry for "reyes2007power"
+Warning--I didn't find a database entry for "iea2011"
+Warning--I didn't find a database entry for "shustek2008interview"
+Warning--I didn't find a database entry for "oetiker2001not"
+You've used 10 entries,
+            2909 wiz_defined-function locations,
+            711 strings with 6916 characters,
+and the built_in function-call counts, 38143 in all, are:
+= -- 6118
+> -- 535
+< -- 1
++ -- 2857
+- -- 161
+* -- 3231
+:= -- 7675
+add.period$ -- 10
+call.type$ -- 10
+change.case$ -- 139
+chr.to.int$ -- 10
+cite$ -- 10
+duplicate$ -- 202
+empty$ -- 390
+format.name$ -- 197
+if$ -- 6905
+int.to.chr$ -- 5
+int.to.str$ -- 0
+missing$ -- 11
+newline$ -- 33
+num.names$ -- 104
+pop$ -- 53
 preamble$ -- 1
-purify$ -- 9
+purify$ -- 150
 quote$ -- 0
-skip$ -- 91
+skip$ -- 179
 stack$ -- 0
-substring$ -- 102
-swap$ -- 17
-text.length$ -- 0
+substring$ -- 8549
+swap$ -- 56
+text.length$ -- 141
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 60
-warning$ -- 2
-while$ -- 25
+type$ -- 38
+warning$ -- 0
+while$ -- 231
 width$ -- 0
-write$ -- 120
-(There were 3 warnings)
+write$ -- 141
+(There were 9 warnings)

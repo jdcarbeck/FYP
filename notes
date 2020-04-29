@@ -1,23 +1,931 @@
+@article{gambhir2017recent,
+  title={Recent automatic text summarization techniques: a survey},
+  author={Gambhir, Mahak and Gupta, Vishal},
+  journal={Artificial Intelligence Review},
+  volume={47},
+  number={1},
+  pages={1--66},
+  year={2017},
+  publisher={Springer}
+}
 
-Project Notes:
+@inproceedings{goldstein2000multi,
+  title={Multi-document summarization by sentence extraction},
+  author={Goldstein, Jade and Mittal, Vibhu and Carbonell, Jaime and Kantrowitz, Mark},
+  booktitle={Proceedings of the 2000 NAACL-ANLP Workshop on Automatic summarization},
+  pages={40--48},
+  year={2000},
+  organization={Association for Computational Linguistics}
+}
 
-Also need to correct implementation of concept chain query
- • query term expansion
+@article{alguliev2011mcmr,
+  title={MCMR: Maximum coverage and minimum redundant text summarization model},
+  author={Alguliev, Rasim M and Aliguliyev, Ramiz M and Hajirahimova, Makrufa S and Mehdiyev, Chingiz A},
+  journal={Expert Systems with Applications},
+  volume={38},
+  number={12},
+  pages={14514--14522},
+  year={2011},
+  publisher={Elsevier}
+}
 
-Issues with segmentation
+@inproceedings{yin2015optimizing,
+  title={Optimizing sentence modeling and selection for document summarization},
+  author={Yin, Wenpeng and Pei, Yulong},
+  booktitle={Twenty-Fourth International Joint Conference on Artificial Intelligence},
+  year={2015}
+}
 
-With knowledge model terms generate the query terms and discount based of off material that is being read at the time. Example in article with discounting for query retrival
+@article{allahyari2017text,
+  title={Text summarization techniques: a brief survey},
+  author={Allahyari, Mehdi and Pouriyeh, Seyedamin and Assefi, Mehdi and Safaei, Saeid and Trippe, Elizabeth D and Gutierrez, Juan B and Kochut, Krys},
+  journal={arXiv preprint arXiv:1707.02268},
+  year={2017}
+}
 
-Need to start looking at demo version of system with document relation, as well as evaluation
+@article{oruasan2019automatic,
+  title={Automatic summarisation: 25 years On},
+  author={Or{\u{a}}san, Constantin},
+  journal={Natural Language Engineering},
+  volume={25},
+  number={6},
+  pages={735--751},
+  year={2019},
+  publisher={Cambridge University Press}
+}
+
+@article{radev2002introduction,
+  title={Introduction to the special issue on summarization},
+  author={Radev, Dragomir R and Hovy, Eduard and McKeown, Kathleen},
+  journal={Computational linguistics},
+  volume={28},
+  number={4},
+  pages={399--408},
+  year={2002},
+  publisher={MIT Press}
+}
+
+@incollection{jones1999automatic,
+  title={Automatic summarizing: factors and directions},
+  author={Jones, K Sparck and others},
+  booktitle={Advances in automatic text summarization},
+  number={1},
+  pages={1--12},
+  year={1999},
+  publisher={MIT press Cambridge, Mass, USA}
+}
+
+@article{diaz2007user,
+  title={User-model based personalized summarization},
+  author={D{\'\i}az, Alberto and Gerv{\'a}s, Pablo},
+  journal={Information Processing \& Management},
+  volume={43},
+  number={6},
+  pages={1715--1734},
+  year={2007},
+  publisher={Elsevier}
+}
+
+@inproceedings{moratanch2016survey,
+  title={A survey on abstractive text summarization},
+  author={Moratanch, N and Chitrakala, S},
+  booktitle={2016 International Conference on Circuit, power and computing technologies (ICCPCT)},
+  pages={1--7},
+  year={2016},
+  organization={IEEE}
+}
+
+@incollection{nenkova2012survey,
+  title={A survey of text summarization techniques},
+  author={Nenkova, Ani and McKeown, Kathleen},
+  booktitle={Mining text data},
+  pages={43--76},
+  year={2012},
+  publisher={Springer}
+}
+
+@inproceedings{mihalcea2004textrank,
+  title={Textrank: Bringing order into text},
+  author={Mihalcea, Rada and Tarau, Paul},
+  booktitle={Proceedings of the 2004 conference on empirical methods in natural language processing},
+  pages={404--411},
+  year={2004}
+}
+
+@article{fattah2014hybrid,
+  title={A hybrid machine learning model for multi-document summarization},
+  author={Fattah, Mohamed Abdel},
+  journal={Applied intelligence},
+  volume={40},
+  number={4},
+  pages={592--600},
+  year={2014},
+  publisher={Springer}
+}
+
+@inproceedings{agirre2004approximating,
+  title={Approximating hierarchy-based similarity for wordnet nominal synsets using topic signatures},
+  author={Agirre, Eneko and Alfonseca, Enrique and De Lacalle, Oier Lopez},
+  booktitle={Proceedings of GWC-04, 2nd global WordNet conference},
+  pages={15--22},
+  year={2004}
+}
+
+@inproceedings{verma2007semantic,
+  title={A semantic free-text summarization system using ontology knowledge},
+  author={Verma, Rakesh and Chen, Ping and Lu, Wei},
+  booktitle={Proc. of Document Understanding Conference},
+  year={2007}
+}
+
+@book{jain20092008,
+  title={2008 IEEE/Wic/acm Joint International Conference on Web Intelligence and Intelligent Agent Technology},
+  author={Jain, L},
+  year={2009},
+  publisher={IEEE Press}
+}
+
+@article{doran2004comparing,
+  title={Comparing lexical chain-based summarisation approaches using an extrinsic evaluation},
+  author={Doran, William and Stokes, Nicola and Carthy, Joe and Dunnion, John},
+  journal={GWC 2004},
+  volume={112},
+  year={2004}
+}
+
+@article{ngo2018wordnet,
+  title={WordNet-Based Information Retrieval Using Common Hypernyms and Combined Features},
+  author={Ngo, Vuong M and Cao, Tru H and Le, Tuan},
+  journal={arXiv preprint arXiv:1807.05574},
+  year={2018}
+}
+
+@article{zhao2009using,
+  title={Using query expansion in graph-based approach for query-focused multi-document summarization},
+  author={Zhao, Lin and Wu, Lide and Huang, Xuanjing},
+  journal={Information processing \& management},
+  volume={45},
+  number={1},
+  pages={35--41},
+  year={2009},
+  publisher={Elsevier}
+}
+
+@inproceedings{lin2000automated,
+  title={The automated acquisition of topic signatures for text summarization},
+  author={Lin, Chin-Yew and Hovy, Eduard},
+  booktitle={Proceedings of the 18th conference on Computational linguistics-Volume 1},
+  pages={495--501},
+  year={2000},
+  organization={Association for Computational Linguistics}
+}
+
+@inproceedings{conroy2006topic,
+  title={Topic-focused multi-document summarization using an approximate oracle score},
+  author={Conroy, John M and Schlesinger, Judith D and O'Leary, Dianne P},
+  booktitle={Proceedings of the COLING/ACL on Main conference poster sessions},
+  pages={152--159},
+  year={2006},
+  organization={Association for Computational Linguistics}
+}
+
+@inproceedings{harabagiu2005topic,
+  title={Topic themes for multi-document summarization},
+  author={Harabagiu, Sanda and Lacatusu, Finley},
+  booktitle={Proceedings of the 28th annual international ACM SIGIR conference on Research and development in information retrieval},
+  pages={202--209},
+  year={2005}
+}
+
+@article{gupta2007measuring,
+  title={Measuring Importance and Query Relevance in Toopic-Focused Multi-Document Summarization},
+  author={Gupta, Surabhi and Nenkova, Ani and Jurafsky, Dan},
+  year={2007}
+}
+
+@inproceedings{li2011generating,
+  title={Generating aspect-oriented multi-document summarization with event-aspect model},
+  author={Li, Peng and Wang, Yinglin and Gao, Wei and Jiang, Jing},
+  booktitle={Proceedings of the conference on empirical methods in Natural Language Processing},
+  pages={1137--1146},
+  year={2011},
+  organization={Association for Computational Linguistics}
+}
+
+@article{luhn1958automatic,
+  title={The automatic creation of literature abstracts},
+  author={Luhn, Hans Peter},
+  journal={IBM Journal of research and development},
+  volume={2},
+  number={2},
+  pages={159--165},
+  year={1958},
+  publisher={Ibm}
+}
+
+@article{dunning1993accurate,
+  title={Accurate methods for the statistics of surprise and coincidence},
+  author={Dunning, Ted},
+  journal={Computational linguistics},
+  volume={19},
+  number={1},
+  pages={61--74},
+  year={1993},
+  publisher={MIT Press}
+}
+
+@inproceedings{lin1997identifying,
+  title={Identifying topics by position},
+  author={Lin, Chin-Yew and Hovy, Eduard},
+  booktitle={Fifth Conference on Applied Natural Language Processing},
+  pages={283--290},
+  year={1997}
+}
+
+@article{vanderwende2007beyond,
+  title={Beyond SumBasic: Task-focused summarization with sentence simplification and lexical expansion},
+  author={Vanderwende, Lucy and Suzuki, Hisami and Brockett, Chris and Nenkova, Ani},
+  journal={Information Processing \& Management},
+  volume={43},
+  number={6},
+  pages={1606--1618},
+  year={2007},
+  publisher={Elsevier}
+}
+
+@inproceedings{yih2007multi,
+  title={Multi-Document Summarization by Maximizing Informative Content-Words.},
+  author={Yih, Wen-tau and Goodman, Joshua and Vanderwende, Lucy and Suzuki, Hisami},
+  booktitle={IJCAI},
+  volume={7},
+  pages={1776--1782},
+  year={2007}
+}
+
+@article{alguliev2013multiple,
+  title={Multiple documents summarization based on evolutionary optimization algorithm},
+  author={Alguliev, Rasim M and Aliguliyev, Ramiz M and Isazade, Nijat R},
+  journal={Expert Systems with Applications},
+  volume={40},
+  number={5},
+  pages={1675--1689},
+  year={2013},
+  publisher={Elsevier}
+}
+
+@article{fellbaum2012wordnet,
+  title={WordNet},
+  author={Fellbaum, Christiane},
+  journal={The encyclopedia of applied linguistics},
+  year={2012},
+  publisher={Wiley Online Library}
+}
+
+@article{jones1972statistical,
+  title={A statistical interpretation of term specificity and its application in retrieval},
+  author={Jones, Karen Sparck},
+  journal={Journal of documentation},
+  year={1972},
+  publisher={MCB UP Ltd}
+}
+
+@article{salton1988term,
+  title={Term-weighting approaches in automatic text retrieval},
+  author={Salton, Gerard and Buckley, Christopher},
+  journal={Information processing \& management},
+  volume={24},
+  number={5},
+  pages={513--523},
+  year={1988},
+  publisher={Elsevier}
+}
+
+@article{deerwester1990indexing,
+  title={Indexing by latent semantic analysis},
+  author={Deerwester, Scott and Dumais, Susan T and Furnas, George W and Landauer, Thomas K and Harshman, Richard},
+  journal={Journal of the American society for information science},
+  volume={41},
+  number={6},
+  pages={391--407},
+  year={1990},
+  publisher={Wiley Online Library}
+}
+
+@inproceedings{gong2001generic,
+  title={Generic text summarization using relevance measure and latent semantic analysis},
+  author={Gong, Yihong and Liu, Xin},
+  booktitle={Proceedings of the 24th annual international ACM SIGIR conference on Research and development in information retrieval},
+  pages={19--25},
+  year={2001}
+}
+
+@article{steinberger2007two,
+  title={Two uses of anaphora resolution in summarization},
+  author={Steinberger, Josef and Poesio, Massimo and Kabadjov, Mijail A and Je{\v{z}}ek, Karel},
+  journal={Information Processing \& Management},
+  volume={43},
+  number={6},
+  pages={1663--1680},
+  year={2007},
+  publisher={Elsevier}
+}
+
+@inproceedings{hachey2006dimensionality,
+  title={Dimensionality reduction aids term co-occurrence based multi-document summarization},
+  author={Hachey, Ben and Murray, Gabriel and Reitter, David},
+  booktitle={Proceedings of the workshop on task-focused summarization and question answering},
+  pages={1--7},
+  year={2006}
+}
+
+@inproceedings{ozsoy2010text,
+  title={Text summarization of turkish texts using latent semantic analysis},
+  author={Ozsoy, Makbule Gulcin and Cicekli, Ilyas and Alpaslan, Ferda Nur},
+  booktitle={Proceedings of the 23rd international conference on computational linguistics},
+  pages={869--876},
+  year={2010},
+  organization={Association for Computational Linguistics}
+}
+
+@article{erkan2004lexrank,
+  title={Lexrank: Graph-based lexical centrality as salience in text summarization},
+  author={Erkan, G{\"u}nes and Radev, Dragomir R},
+  journal={Journal of artificial intelligence research},
+  volume={22},
+  pages={457--479},
+  year={2004}
+}
+
+@inproceedings{celikyilmaz2010hybrid,
+  title={A hybrid hierarchical model for multi-document summarization},
+  author={Celikyilmaz, Asli and Hakkani-Tur, Dilek},
+  booktitle={Proceedings of the 48th Annual Meeting of the Association for Computational Linguistics},
+  pages={815--824},
+  year={2010},
+  organization={Association for Computational Linguistics}
+}
+
+@inproceedings{rajagopal2013commonsense,
+  title={Commonsense-based topic modeling},
+  author={Rajagopal, Dheeraj and Olsher, Daniel and Cambria, Erik and Kwok, Kenneth},
+  booktitle={Proceedings of the second international workshop on issues of sentiment discovery and opinion mining},
+  pages={1--8},
+  year={2013}
+}
+
+@inproceedings{wang2014concept,
+  title={Concept-based short text classification and ranking},
+  author={Wang, Fang and Wang, Zhongyuan and Li, Zhoujun and Wen, Ji-Rong},
+  booktitle={Proceedings of the 23rd ACM International Conference on Conference on Information and Knowledge Management},
+  pages={1069--1078},
+  year={2014}
+}
+
+@article{kim2017bag,
+  title={Bag-of-concepts: Comprehending document representation through clustering words in distributed representation},
+  author={Kim, Han Kyul and Kim, Hyunjoong and Cho, Sungzoon},
+  journal={Neurocomputing},
+  volume={266},
+  pages={336--352},
+  year={2017},
+  publisher={Elsevier}
+}
+
+@article{mikolov2013efficient,
+  title={Efficient estimation of word representations in vector space},
+  author={Mikolov, Tomas and Chen, Kai and Corrado, Greg and Dean, Jeffrey},
+  journal={arXiv preprint arXiv:1301.3781},
+  year={2013}
+}
+
+@inproceedings{mikolov2013distributed,
+  title={Distributed representations of words and phrases and their compositionality},
+  author={Mikolov, Tomas and Sutskever, Ilya and Chen, Kai and Corrado, Greg S and Dean, Jeff},
+  booktitle={Advances in neural information processing systems},
+  pages={3111--3119},
+  year={2013}
+}
+
+@inproceedings{pennington2014glove,
+  title={Glove: Global vectors for word representation},
+  author={Pennington, Jeffrey and Socher, Richard and Manning, Christopher D},
+  booktitle={Proceedings of the 2014 conference on empirical methods in natural language processing (EMNLP)},
+  pages={1532--1543},
+  year={2014}
+}
+
+@article{zhao2017fuzzy,
+  title={Fuzzy bag-of-words model for document representation},
+  author={Zhao, Rui and Mao, Kezhi},
+  journal={IEEE Transactions on Fuzzy Systems},
+  volume={26},
+  number={2},
+  pages={794--804},
+  year={2017},
+  publisher={IEEE}
+}
+
+@article{berkhin2005survey,
+  title={A survey on PageRank computing},
+  author={Berkhin, Pavel},
+  journal={Internet mathematics},
+  volume={2},
+  number={1},
+  pages={73--120},
+  year={2005},
+  publisher={Taylor \& Francis}
+}
+
+@inproceedings{chali2008improving,
+  title={Improving the performance of the random walk model for answering complex questions},
+  author={Chali, Yllias and Joty, Shafiq},
+  booktitle={Proceedings of ACL-08: HLT, Short Papers},
+  pages={9--12},
+  year={2008}
+}
+
+@article{qazvinian2008scientific,
+  title={Scientific paper summarization using citation summary networks},
+  author={Qazvinian, Vahed and Radev, Dragomir R},
+  journal={arXiv preprint arXiv:0807.1560},
+  year={2008}
+}
+
+@article{qazvinian2013generating,
+  title={Generating extractive summaries of scientific paradigms},
+  author={Qazvinian, Vahed and Radev, Dragomir R and Mohammad, Saif M and Dorr, Bonnie and Zajic, David and Whidby, Michael and Moon, Taesun},
+  journal={Journal of Artificial Intelligence Research},
+  volume={46},
+  pages={165--201},
+  year={2013}
+}
+
+@inproceedings{rahman2015survey,
+  title={A survey on existing extractive techniques for query-based text summarization},
+  author={Rahman, Nazreena and Borah, Bhogeswar},
+  booktitle={2015 International Symposium on Advanced Computing and Communication (ISACC)},
+  pages={98--102},
+  year={2015},
+  organization={IEEE}
+}
+
+@inproceedings{mohamed2006improving,
+  title={Improving query-based summarization using document graphs},
+  author={Mohamed, Ahmed A and Rajasekaran, Sanguthevar},
+  booktitle={2006 IEEE international symposium on signal processing and information technology},
+  pages={408--410},
+  year={2006},
+  organization={IEEE}
+}
+
+@inproceedings{wei2008query,
+  title={A query-sensitive graph-based sentence ranking algorithm for query-oriented multi-document summarization},
+  author={Wei, Furu and He, Yanxiang and Li, Wenjie and Lu, Qin},
+  booktitle={2008 International Symposiums on Information Processing},
+  pages={9--13},
+  year={2008},
+  organization={IEEE}
+}
+
+@inproceedings{pandit2013query,
+  title={A query specific graph based approach to multi-document text summarization: simultaneous cluster and sentence ranking},
+  author={Pandit, Sandip R and Potey, MA},
+  booktitle={2013 International Conference on Machine Intelligence and Research Advancement},
+  pages={213--217},
+  year={2013},
+  organization={IEEE}
+}
+
+@inproceedings{tang2009multi,
+  title={Multi-topic based query-oriented summarization},
+  author={Tang, Jie and Yao, Limin and Chen, Dewei},
+  booktitle={Proceedings of the 2009 SIAM International Conference on Data Mining},
+  pages={1148--1159},
+  year={2009},
+  organization={SIAM}
+}
+
+@inproceedings{ye2008query,
+  title={Query-based summarization for search lists},
+  author={Ye, Xinghuo and Wei, Hai},
+  booktitle={First International Workshop on Knowledge Discovery and Data Mining (WKDD 2008)},
+  pages={330--333},
+  year={2008},
+  organization={IEEE}
+}
+
+@inproceedings{gupta2012multi,
+  title={Multi-document summarization using sentence clustering},
+  author={Gupta, Virendra Kumar and Siddiqui, Tanveer J},
+  booktitle={2012 4th International Conference on Intelligent Human Computer Interaction (IHCI)},
+  pages={1--5},
+  year={2012},
+  organization={IEEE}
+}
+
+@incollection{saggion2013automatic,
+  title={Automatic text summarization: Past, present and future},
+  author={Saggion, Horacio and Poibeau, Thierry},
+  booktitle={Multi-source, multilingual information extraction and summarization},
+  pages={3--21},
+  year={2013},
+  publisher={Springer}
+}
+
+@inproceedings{baumann2002combining,
+  title={Combining ontologies and document retrieval techniques: a case study for an e-learning scenario},
+  author={Baumann, Stephan and Dengel, Andreas and Junker, Markus and Kieninger, Thomas},
+  booktitle={Proceedings. 13th International Workshop on Database and Expert Systems Applications},
+  pages={133--137},
+  year={2002},
+  organization={IEEE}
+}
+
+@inproceedings{soundoss2018case,
+  title={Case-Based Reasoning for E-Learning Systems: State of the Art},
+  author={Soundoss, Abroun and Mohamed, Ghailani and Abdelhadi, Fennan},
+  booktitle={2018 IEEE 5th International Congress on Information Science and Technology (CiSt)},
+  pages={353--356},
+  year={2018},
+  organization={IEEE}
+}
+
+@inproceedings{ferreira2014context,
+  title={A context based text summarization system},
+  author={Ferreira, Rafael and Freitas, Frederico and de Souza Cabral, Luciano and Lins, Rafael Dueire and Lima, Rinaldo and Fran{\c{c}}a, Gabriel and Simske, Steven J and Favaro, Luciano},
+  booktitle={2014 11th IAPR International Workshop on Document Analysis Systems},
+  pages={66--70},
+  year={2014},
+  organization={IEEE}
+}
+
+@article{soucek2010coping,
+  title={Coping with information overload in email communication: Evaluation of a training intervention},
+  author={Soucek, Roman and Moser, Klaus},
+  journal={Computers in Human Behavior},
+  volume={26},
+  number={6},
+  pages={1458--1466},
+  year={2010},
+  publisher={Elsevier}
+}
+
+@book{gross1964managing,
+  title={The managing of organizations: The administrative struggle},
+  author={Gross, Bertram Myron},
+  volume={2},
+  year={1964},
+  publisher={[New York]: Free Press of Glencoe}
+}
+
+@article{roetzel2019information,
+  title={Information overload in the information age: a review of the literature from business administration, business psychology, and related disciplines with a bibliometric approach and framework development},
+  author={Roetzel, Peter Gordon},
+  journal={Business Research},
+  volume={12},
+  number={2},
+  pages={479--522},
+  year={2019},
+  publisher={Springer}
+}
+
+@inproceedings{sarker2013approach,
+  title={An approach for query-focused text summarisation for evidence based medicine},
+  author={Sarker, Abeed and Moll{\'a}, Diego and Paris, C{\'e}cile},
+  booktitle={Conference on Artificial Intelligence in Medicine in Europe},
+  pages={295--304},
+  year={2013},
+  organization={Springer}
+}
+
+@inproceedings{ge2012ontology,
+  title={An ontology-based method for personalized recommendation},
+  author={Ge, Jike and Chen, Zuqin and Peng, Jun and Li, Taifu},
+  booktitle={2012 IEEE 11th International Conference on Cognitive Informatics and Cognitive Computing},
+  pages={522--526},
+  year={2012},
+  organization={IEEE}
+}
+
+@inproceedings{galgani2012combining,
+  title={Combining different summarization techniques for legal text},
+  author={Galgani, Filippo and Compton, Paul and Hoffmann, Achim},
+  booktitle={Proceedings of the workshop on innovative hybrid approaches to the processing of textual data},
+  pages={115--123},
+  year={2012},
+  organization={Association for Computational Linguistics}
+}
+
+@inproceedings{chiaramella2000information,
+  title={Information retrieval and structured documents},
+  author={Chiaramella, Yves},
+  booktitle={European Summer School on Information Retrieval},
+  pages={286--309},
+  year={2000},
+  organization={Springer}
+}
+
+@article{carpineto2012survey,
+  title={A survey of automatic query expansion in information retrieval},
+  author={Carpineto, Claudio and Romano, Giovanni},
+  journal={Acm Computing Surveys (CSUR)},
+  volume={44},
+  number={1},
+  pages={1--50},
+  year={2012},
+  publisher={ACM New York, NY, USA}
+}
+
+@inproceedings{goldstein2000multi,
+  title={Multi-document summarization by sentence extraction},
+  author={Goldstein, Jade and Mittal, Vibhu and Carbonell, Jaime and Kantrowitz, Mark},
+  booktitle={Proceedings of the 2000 NAACL-ANLP Workshop on Automatic summarization},
+  pages={40--48},
+  year={2000},
+  organization={Association for Computational Linguistics}
+}
+
+@article{bedini2007automatic,
+  title={Automatic ontology generation: State of the art},
+  author={Bedini, Ivan and Nguyen, Benjamin},
+  journal={PRiSM Laboratory Technical Report. University of Versailles},
+  year={2007}
+}
+
+@inproceedings{sarker2013approach,
+  title={An approach for query-focused text summarisation for evidence based medicine},
+  author={Sarker, Abeed and Moll{\'a}, Diego and Paris, C{\'e}cile},
+  booktitle={Conference on Artificial Intelligence in Medicine in Europe},
+  pages={295--304},
+  year={2013},
+  organization={Springer}
+}
+
+@inproceedings{galgani2012combining,
+  title={Combining different summarization techniques for legal text},
+  author={Galgani, Filippo and Compton, Paul and Hoffmann, Achim},
+  booktitle={Proceedings of the workshop on innovative hybrid approaches to the processing of textual data},
+  pages={115--123},
+  year={2012},
+  organization={Association for Computational Linguistics}
+}
+
+@article{bedini2007automatic,
+  title={Automatic ontology generation: State of the art},
+  author={Bedini, Ivan and Nguyen, Benjamin},
+  journal={PRiSM Laboratory Technical Report. University of Versailles},
+  year={2007}
+}
+
+@inproceedings{crossley2017important,
+  title={How important is size? An investigation of corpus size and meaning in both latent semantic analysis and latent Dirichlet allocation},
+  author={Crossley, Scott and Dascalu, Mihai and McNamara, Danielle},
+  booktitle={The Thirtieth International Flairs Conference},
+  year={2017}
+}
+
+@article{blei2003latent,
+  title={Latent dirichlet allocation},
+  author={Blei, David M and Ng, Andrew Y and Jordan, Michael I},
+  journal={Journal of machine Learning research},
+  volume={3},
+  number={Jan},
+  pages={993--1022},
+  year={2003}
+}
+
+@article{carpineto2012survey,
+  title={A survey of automatic query expansion in information retrieval},
+  author={Carpineto, Claudio and Romano, Giovanni},
+  journal={Acm Computing Surveys (CSUR)},
+  volume={44},
+  number={1},
+  pages={1--50},
+  year={2012},
+  publisher={ACM New York, NY, USA}
+}
 
 
+@inproceedings{li2016cross,
+  title={Cross-document knowledge discovery using semantic concept topic model},
+  author={Li, Xin and Jin, Wei},
+  booktitle={2016 15th IEEE International Conference on Machine Learning and Applications (ICMLA)},
+  pages={108--114},
+  year={2016},
+  organization={IEEE}
+}
 
-Change corpus to work on a list of documents, or get topic term frequencys directly from the documents
+@inproceedings{wei2006lda,
+  title={LDA-based document models for ad-hoc retrieval},
+  author={Wei, Xing and Croft, W Bruce},
+  booktitle={Proceedings of the 29th annual international ACM SIGIR conference on Research and development in information retrieval},
+  pages={178--185},
+  year={2006}
+}
 
+@article{steyvers2007probabilistic,
+  title={Probabilistic topic models},
+  author={Steyvers, Mark and Griffiths, Tom},
+  journal={Handbook of latent semantic analysis},
+  volume={427},
+  number={7},
+  pages={424--440},
+  year={2007}
+}
 
-Time complexity as an issues for sentences selection:
-    Can be dealt with by choosing higher simlarity threshold such as .90 instead of .72
-    Need to generate sentence pairings first then break them up into to proceesses to create the model
+Attardi, G (2016) WikiExtractor source code (Version 2.55) [Source code]. http://medialab.di.unipi.it/wiki/Wikipedia_Extractor
 
-In terms of evaluation evaulate it based of query based reterival methods
-Can only hint at personalsisation and say that the system is apt for being implemented with topic based user modeling
+@article{richardson2007beautiful,
+  title={Beautiful soup documentation},
+  author={Richardson, Leonard},
+  journal={April},
+  year={2007}
+}
+
+@book{bird2009natural,
+  title={Natural language processing with Python: analyzing text with the natural language toolkit},
+  author={Bird, Steven and Klein, Ewan and Loper, Edward},
+  year={2009},
+  publisher={" O'Reilly Media, Inc."}
+}
+
+@article{kiss2006unsupervised,
+  title={Unsupervised multilingual sentence boundary detection},
+  author={Kiss, Tibor and Strunk, Jan},
+  journal={Computational linguistics},
+  volume={32},
+  number={4},
+  pages={485--525},
+  year={2006},
+  publisher={MIT Press}
+}
+
+@inproceedings{rehurek2010software,
+  title={Software framework for topic modelling with large corpora},
+  author={Rehurek, Radim and Sojka, Petr},
+  booktitle={In Proceedings of the LREC 2010 Workshop on New Challenges for NLP Frameworks},
+  year={2010},
+  organization={Citeseer}
+}
+
+@inproceedings{sievert2014ldavis,
+  title={LDAvis: A method for visualizing and interpreting topics},
+  author={Sievert, Carson and Shirley, Kenneth},
+  booktitle={Proceedings of the workshop on interactive language learning, visualization, and interfaces},
+  pages={63--70},
+  year={2014}
+}
+
+@article{van2009python,
+  title={PYTHON 2.6 Reference Manual},
+  author={Van Rossum, Guido and Drake, Fred L},
+  year={2009},
+  publisher={CreateSpace}
+}
+
+@article{yau2014clustering,
+  title={Clustering scientific documents with topic modeling},
+  author={Yau, Chyi-Kwei and Porter, Alan and Newman, Nils and Suominen, Arho},
+  journal={Scientometrics},
+  volume={100},
+  number={3},
+  pages={767--786},
+  year={2014},
+  publisher={Springer}
+}
+
+@article{carter2016reading,
+  title={Reading the high court at a distance: Topic modelling the legal subject matter and judicial activity of the high court of australia, 1903-2015},
+  author={Carter, David J and Brown, James and Rahmani, Adel},
+  journal={UNSWLJ},
+  volume={39},
+  pages={1300},
+  year={2016},
+  publisher={HeinOnline}
+}
+
+@article{suominen2016map,
+  title={Map of science with topic modeling: Comparison of unsupervised learning and human-assigned subject classification},
+  author={Suominen, Arho and Toivanen, Hannes},
+  journal={Journal of the Association for Information Science and Technology},
+  volume={67},
+  number={10},
+  pages={2464--2476},
+  year={2016},
+  publisher={Wiley Online Library}
+}
+
+@inproceedings{lin2006information,
+  title={An information-theoretic approach to automatic evaluation of summaries},
+  author={Lin, Chin-Yew and Cao, Guihong and Gao, Jianfeng and Nie, Jian-Yun},
+  booktitle={Proceedings of the main conference on Human Language Technology Conference of the North American Chapter of the Association of Computational Linguistics},
+  pages={463--470},
+  year={2006},
+  organization={Association for Computational Linguistics}
+}
+
+@article{see2017get,
+  title={Get to the point: Summarization with pointer-generator networks},
+  author={See, Abigail and Liu, Peter J and Manning, Christopher D},
+  journal={arXiv preprint arXiv:1704.04368},
+  year={2017}
+}
+
+@article{fabbri2019multi,
+  title={Multi-news: a large-scale multi-document summarization dataset and abstractive hierarchical model},
+  author={Fabbri, Alexander R and Li, Irene and She, Tianwei and Li, Suyi and Radev, Dragomir R},
+  journal={arXiv preprint arXiv:1906.01749},
+  year={2019}
+}
+
+@inproceedings{lin2004rouge,
+  title={ROUGE: A Packagefor Automatic Evaluation of Summaries},
+  author={Lin, Chin-Yew},
+  booktitle={ProceedingsofWorkshop on Text Summarization Branches Out, Post2Conference Workshop of ACL},
+  year={2004}
+}
+
+@article{liu2019text,
+  title={Text summarization with pretrained encoders},
+  author={Liu, Yang and Lapata, Mirella},
+  journal={arXiv preprint arXiv:1908.08345},
+  year={2019}
+}
+
+@article{zhong2019searching,
+  title={Searching for Effective Neural Extractive Summarization: What Works and What's Next},
+  author={Zhong, Ming and Liu, Pengfei and Wang, Danqing and Qiu, Xipeng and Huang, Xuanjing},
+  journal={arXiv preprint arXiv:1907.03491},
+  year={2019}
+}
+
+@article{zhang2019hibert,
+  title={HIBERT: Document level pre-training of hierarchical bidirectional transformers for document summarization},
+  author={Zhang, Xingxing and Wei, Furu and Zhou, Ming},
+  journal={arXiv preprint arXiv:1905.06566},
+  year={2019}
+}
+
+@article{zhou2018neural,
+  title={Neural document summarization by jointly learning to score and select sentences},
+  author={Zhou, Qingyu and Yang, Nan and Wei, Furu and Huang, Shaohan and Zhou, Ming and Zhao, Tiejun},
+  journal={arXiv preprint arXiv:1807.02305},
+  year={2018}
+}
+
+@article{erkan2004lexrank,
+  title={Lexrank: Graph-based lexical centrality as salience in text summarization},
+  author={Erkan, G{\"u}nes and Radev, Dragomir R},
+  journal={Journal of artificial intelligence research},
+  volume={22},
+  pages={457--479},
+  year={2004}
+}
+
+@inproceedings{mihalcea2004textrank,
+  title={Textrank: Bringing order into text},
+  author={Mihalcea, Rada and Tarau, Paul},
+  booktitle={Proceedings of the 2004 conference on empirical methods in natural language processing},
+  pages={404--411},
+  year={2004}
+}
+
+@inproceedings{carbonell1998use,
+  title={The use of MMR, diversity-based reranking for reordering documents and producing summaries},
+  author={Carbonell, Jaime and Goldstein, Jade},
+  booktitle={Proceedings of the 21st annual international ACM SIGIR conference on Research and development in information retrieval},
+  pages={335--336},
+  year={1998}
+}
+
+@article{lebanoff2018adapting,
+  title={Adapting the neural encoder-decoder framework from single to multi-document summarization},
+  author={Lebanoff, Logan and Song, Kaiqiang and Liu, Fei},
+  journal={arXiv preprint arXiv:1808.06218},
+  year={2018}
+}
+
+@inproceedings{khurana2019extractive,
+  title={Extractive Document Summarization using Non-negative Matrix Factorization},
+  author={Khurana, Alka and Bhatnagar, Vasudha},
+  booktitle={International Conference on Database and Expert Systems Applications},
+  pages={76--90},
+  year={2019},
+  organization={Springer}
+}
+
+@inproceedings{wei2006lda,
+  title={LDA-based document models for ad-hoc retrieval},
+  author={Wei, Xing and Croft, W Bruce},
+  booktitle={Proceedings of the 29th annual international ACM SIGIR conference on Research and development in information retrieval},
+  pages={178--185},
+  year={2006}
+}
+
+@article{mitchell2011pulp,
+  title={PuLP: a linear programming toolkit for python},
+  author={Mitchell, Stuart and OSullivan, Michael and Dunning, Iain},
+  journal={The University of Auckland, Auckland, New Zealand},
+  year={2011},
+  publisher={Citeseer}
+}
